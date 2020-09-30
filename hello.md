@@ -1,10 +1,10 @@
 ---
 layout: page
-title: About
+title: Hello
 tagline: A few more words about this theme
-permalink: /about.html
-ref: about
-order: 0
+permalink: /hello.html
+ref: hello
+order: 3
 ---
 
 This is the _Cayman Blog_ Jekyll theme. You can find out more info about customizing this theme, as well as basic usage documentation, and source code at: [cayman-blog](https://github.com/lorepirri/cayman-blog)
