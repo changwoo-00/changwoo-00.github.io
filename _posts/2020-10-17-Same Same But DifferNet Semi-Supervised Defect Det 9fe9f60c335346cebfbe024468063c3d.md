@@ -109,7 +109,7 @@ robust한 결과를 얻기위해 input image 에 여러 transformation 함수를
 
 $$\tau (x) = \mathbb{E}_{T_i \in \mathcal{T}} [-\log p_Z(f_{NF}(f_{ex}(T_i(x))))]$$
 
-$$\tau (x) = \mathbb{E}{Ti \in \mathcal{T}} [-\logpZ(f{NF}(f{ex}(Ti(x))))]$$
+$\tau (x) = \mathbb{E}{Ti \in \mathcal{T}} [-\logpZ(f{NF}(f{ex}(Ti(x))))]$
 
 where $T_i (x) \in \mathcal{T}$.
 
