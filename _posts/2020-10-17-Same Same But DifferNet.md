@@ -8,7 +8,7 @@ use_math: true
 
 Marco Rudolph, Bastian Wandt, Bodo Rosenhahn
 
-(정리 20.10.2)
+<!--(정리 20.10.2)-->
 
 ### 목적
 
@@ -18,6 +18,8 @@ Marco Rudolph, Bastian Wandt, Bodo Rosenhahn
 
 이를 위해 저자는 anomaly detection 논문에서 주로 사용되어온 variational autoencoder나 GAN이 아니라 feature space와 latent space 사이의 bijective map이 가능한 normalizing flow 방식을 사용한다.
 
+<!--
+
 (Differnet)
 
 ...
@@ -26,16 +28,20 @@ high&low likelihood → score
 
 likelihood of several transformations
 
-feature extractor와 제안한 image transformation 덕분에 적은 수의 학습 데이터로도 sota의 성능을 뛰어 넘는다.
+-->
 
-defect detection 뿐만 아니라 scoring function으로 부터의 gradient를 계산하여 defect의 localization도 가능하다.
+feature extractor와 image transformation 덕분에 적은 수의 학습 데이터로도 SOTA의 성능을 달성하였다.
 
-contributions
+추가적으로 defect detection 뿐만 아니라 scoring function으로 부터의 gradient를 계산하여 defect의 localization도 가능하다.
+
+논문에서 주장하는 contribution을 요약하면 다음과 같다.
 
 - multi-scale image feature에 적용한 normalizing flow로 anomaly를 detect 함.
 - training label 없이 anomaly localization을 함.
 - 적은 양의 학습 데이터셋을 가지고 있는 경우에 적용가능.
 - MVTec AD와 Magnetic Tile Defects dataset에 대해 State-of-the-art 성능을 달성함.
+
+<!--
 
 Normalizing Flows
 
@@ -55,11 +61,20 @@ Dinh et al. (Real-NVP)
 
 Ardizzone et al. (Invertible Neural Networks)
 
+-->
+
 ### Baseline method
 
-![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled.png](/assets/Untitled.png)
 
-overview of pipeline
+
+ <center>
+    <figure>
+          <img src="/assets/Untitled.png" alt="Untitled" style="width:100%">
+          <figcaption>Overview of pipeline</figcaption>
+    </figure>
+</center>
+
+
 
 anomaly free training images : $x \in X$
 
@@ -69,7 +84,11 @@ latent vectors : $z$ (with a well-defined distribution $p_Z(z)$ (normal gaussian
 
 **feature extractor**
 
-$f_{ex} : X → Y$
+
+
+\begin{equation} \nonumber f_{ex} : X → Y \end{equation}
+
+
 
 Imagenet dataset으로 pretrained 된 AlexNet을 사용함.
 
@@ -79,15 +98,24 @@ Imagenet dataset으로 pretrained 된 AlexNet을 사용함.
 
 **normalizing flow**
 
-$f_{NF} : Y → Z$
+
+
+\begin{equation} \nonumber f\_{NF} : Y → Z \end{equation}
+
+
 
 Real-NVP의 coupling block 8개로 구성
 
 internal function s, t는 fully-connected network 사용
 
-![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%201.png](/assets/Untitled%201.png)
+<center>
+    <figure>
+          <img src="/assets/Untitled%201.png" alt="Untitled2" style="width:100%">
+          <figcaption>Architecture of one block inside the normalizing flow</figcaption>
+    </figure>
+</center>
 
-Architecture of one block inside the normalizing flow
+
 
 ### Dataset
 
@@ -142,19 +170,27 @@ Detection
 
 one-class SVM, 1-NN, GeoTrans, GANomaly, 그리고 DSEBM에 대해 AUROC를 통해 성능을 비교하였다.
 
-![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%202.png](/assets/Untitled%202.png)
+<center>
+    <figure>
+        <img src="/assets/Untitled%202.png" alt="Untitled2" style="width:100%">
+        <img src="/assets/Untitled%203.png" alt="Untitled3" style="width:70%">
+          <img src="/assets/Untitled%204.png" alt="Untitled4" style="width:70%">
+          <figcaption>Training Sample 갯수에 따른 성능 변화</figcaption>
+    </figure>
+</center>
 
-![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%203.png](/assets/Untitled%203.png)
 
-![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%204.png](/assets/Untitled%204.png)
-
-Training Sample 갯수에 따른 성능 변화
 
 Localization
 
-![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%205.png](/assets/Untitled%205.png)
+<center>
+    <figure>
+          <img src="/assets/Untitled%205.png" alt="Untitled" style="width:60%">
+          <figcaption>MVTec AD 에 대한 Localization 결과</figcaption>
+    </figure>
+</center>
 
-MVTec AD 에 대한 Localization 결과
+*MVTec AD 에 대한 Localization 결과*
 
 ### Discussion
 
@@ -162,7 +198,7 @@ normalizing flow-based density estimation 을 통한 defect detection model(Diff
 
 비교적 적은 양의 training sample을 가지고도 좋은 성능을 보이는 것을 확인 할 수 있다.
 
-fin.
+
 
 ---
 
