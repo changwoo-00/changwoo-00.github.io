@@ -3,7 +3,7 @@ description: ML/DL
 show_downloads: true
 
 baseurl: "" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
-url: "https://cwh-00.github.io" # change this to the base hostname & protocol for your site
+url: "https://hcw-00.github.io" # change this to the base hostname & protocol for your site
 
 
 google_analytics:
