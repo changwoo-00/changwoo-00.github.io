@@ -1,5 +1,7 @@
 <header class="site-header" role="banner">
-
+  {% if page.use_math %}
+  {% include mathjax_support.html %}
+  {% endif %}
   <div class="wrapper">
     {% assign default_refs = site.pages | sort:"order" | map: "ref" %}
     {% assign page_refs = site.header_page_refs | default: default_refs %}
