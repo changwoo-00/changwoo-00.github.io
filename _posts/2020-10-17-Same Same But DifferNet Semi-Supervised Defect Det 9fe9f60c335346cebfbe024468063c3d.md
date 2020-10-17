@@ -107,7 +107,7 @@ MVTec AD, Magnetic Tile Defects(MTD) dataset을 사용하였다.
 
 scoring function으로 negative log-likelihood를 사용하였다.
 
-robust한 결과를 얻기위해 input image 에 여러 transformation 함수를 적용하여 평균을 냈다.
+robust한 결과를 얻기위해 input image 에 여러 transformation 함수를 적용하여 평균을 냈다.  
 
 \begin{equation}
     \tau (x) = \mathbb{E}_{T_i \in \mathcal{T}} [-\log p_Z(f_{NF}(f_{ex}(T_i(x))))]
@@ -118,11 +118,11 @@ where $T_i (x) \in \mathcal{T}$.
 anomaly score $\tau(x)$ 와 threshold $\theta$ 를 이용하여 최종 판정
 
 \begen{equation}
-\mathcal{A}(x)= 
-\begin{cases}
-    1,& \text{for } \tau(x)\geq \theta\\
-    0,              & \text{for } \tau(x)< \theta
-\end{cases}
+    \mathcal{A}(x)= 
+    \begin{cases}
+        1,& \text{for } \tau(x)\geq \theta\\
+        0,              & \text{for } \tau(x)< \theta
+    \end{cases}
 \end{equation}
 
 where $\mathcal{A}(x) = 1$ indicates an anomaly.
