@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Paper Review"
-math: true
+use_math: true
 ---
 
 # Same Same But DifferNet: Semi-Supervised Defect Detection with Normalizing Flows
