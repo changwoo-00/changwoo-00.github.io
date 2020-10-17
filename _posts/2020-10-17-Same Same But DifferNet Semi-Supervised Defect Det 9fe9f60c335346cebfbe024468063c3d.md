@@ -117,11 +117,13 @@ where $T_i (x) \in \mathcal{T}$.
 
 anomaly score $\tau(x)$ 와 threshold $\theta$ 를 이용하여 최종 판정
 
-$$ \mathcal{A}(x)= 
+\begen{equation}
+\mathcal{A}(x)= 
 \begin{cases}
     1,& \text{for } \tau(x)\geq \theta\\
     0,              & \text{for } \tau(x)< \theta
-\end{cases}$$
+\end{cases}
+\end{equation}
 
 where $\mathcal{A}(x) = 1$ indicates an anomaly.
 
@@ -157,6 +159,7 @@ normalizing flow-based density estimation 을 통한 defect detection model(Diff
 
 ---
 
+<!--
 ### note
 
 중요
@@ -240,3 +243,4 @@ We argue that generative models are appropriate for a wide range of defect detec
         '''pytorch tensor -> numpy array'''
         return tensor.cpu().data.numpy() if tensor is not None else None
     ```
+-->
