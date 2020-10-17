@@ -109,6 +109,8 @@ robust한 결과를 얻기위해 input image 에 여러 transformation 함수를
 
 $$\tau (x) = \mathbb{E}_{T_i \in \mathcal{T}} [-\log p_Z(f_{NF}(f_{ex}(T_i(x))))]$$
 
+$$\tau (x) = \mathbb{E}{Ti \in \mathcal{T}} [-\logpZ(f{NF}(f{ex}(Ti(x))))]$$
+
 where $T_i (x) \in \mathcal{T}$.
 
 anomaly score $\tau(x)$ 와 threshold $\theta$ 를 이용하여 최종 판정
