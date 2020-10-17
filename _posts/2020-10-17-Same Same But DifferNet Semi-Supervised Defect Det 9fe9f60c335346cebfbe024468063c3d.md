@@ -123,7 +123,7 @@ anomaly score $\tau(x)$ 와 threshold $\theta$ 를 이용하여 최종 판정
 \begin{equation}
     \mathcal{A}(x)= 
     \begin{cases}
-        1,& \text{for } \tau(x)\geq \theta \\\\
+        1,& \text{for } \tau(x)\geq \theta \cr
         0,& \text{for } \tau(x)< \theta
     \end{cases}
 \end{equation}
