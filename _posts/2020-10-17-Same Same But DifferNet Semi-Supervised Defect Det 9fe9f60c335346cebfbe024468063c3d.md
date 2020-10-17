@@ -107,7 +107,7 @@ scoring function으로 negative log-likelihood를 사용하였다.
 
 robust한 결과를 얻기위해 input image 에 여러 transformation 함수를 적용하여 평균을 냈다.
 
-$$\tau (x) = \mathbb{E}_{T_i \in \mathcal{T}} [-\log p_Z(f_{NF}(f_{ex}(T_i(x))))]$$
+$\tau (x) = \mathbb{E}_{T_i \in \mathcal{T}} [-\log p_Z(f_{NF}(f_{ex}(T_i(x))))]$
 
 where $T_i (x) \in \mathcal{T}$.
 
