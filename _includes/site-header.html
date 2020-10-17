@@ -8,9 +8,7 @@
       <a class="site-title" href="{{ "/" | absolute_url }}">{{ site.title | escape }}</a>
     {% endif %}
     
-    {% if page.use_math %}
     {% include mathjax_support.html %}
-    {% endif %}
     
     {% if page_refs %}
       <nav class="site-nav">
