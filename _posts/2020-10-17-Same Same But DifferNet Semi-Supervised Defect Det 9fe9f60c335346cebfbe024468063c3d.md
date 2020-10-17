@@ -113,6 +113,7 @@ scoring function으로 negative log-likelihood를 사용하였다.
 robust한 결과를 얻기위해 input image 에 여러 transformation 함수를 적용하여 평균을 냈다.  
 
 \begin{equation}
+\nonumber
     \tau (x) = \mathbb{E}\_{T\_i \in \mathcal{T}} [-\log p\_Z(f\_{NF}(f\_{ex}(T\_i(x))))]
 \end{equation}
 
@@ -121,6 +122,7 @@ where $T_i (x) \in \mathcal{T}$.
 anomaly score $\tau(x)$ 와 threshold $\theta$ 를 이용하여 최종 판정
 
 \begin{equation}
+\nonumber
     \mathcal{A}(x)= 
     \begin{cases}
         1,& \text{for } \tau(x)\geq \theta \cr
