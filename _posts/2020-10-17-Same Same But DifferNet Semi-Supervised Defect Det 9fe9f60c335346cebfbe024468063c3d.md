@@ -57,7 +57,7 @@ Ardizzone et al. (Invertible Neural Networks)
 
 ### Baseline method
 
-![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled.png](Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled.png)
+![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled.png](/assets/Untitled.png)
 
 overview of pipeline
 
@@ -85,7 +85,7 @@ Real-NVP의 coupling block 8개로 구성
 
 internal function s, t는 fully-connected network 사용
 
-![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%201.png](Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%201.png)
+![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%201.png](/assets/Untitled%201.png)
 
 Architecture of one block inside the normalizing flow
 
@@ -142,17 +142,17 @@ Detection
 
 one-class SVM, 1-NN, GeoTrans, GANomaly, 그리고 DSEBM에 대해 AUROC를 통해 성능을 비교하였다.
 
-![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%202.png](Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%202.png)
+![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%202.png](/assets/Untitled%202.png)
 
-![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%203.png](Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%203.png)
+![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%203.png](/assets/Untitled%203.png)
 
-![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%204.png](Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%204.png)
+![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%204.png](/assets/Untitled%204.png)
 
 Training Sample 갯수에 따른 성능 변화
 
 Localization
 
-![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%205.png](Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%205.png)
+![Same%20Same%20But%20DifferNet%20Semi-Supervised%20Defect%20Det%209fe9f60c335346cebfbe024468063c3d/Untitled%205.png](/assets/Untitled%205.png)
 
 MVTec AD 에 대한 Localization 결과
 
