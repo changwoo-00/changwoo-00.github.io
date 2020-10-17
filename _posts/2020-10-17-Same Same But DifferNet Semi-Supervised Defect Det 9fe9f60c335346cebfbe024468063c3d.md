@@ -98,7 +98,7 @@ MVTec AD, Magnetic Tile Defects(MTD) dataset을 사용하였다.
 문제의 목적은 extracted features $y\in Y$ 가 주어졌을 때 likelihood를 최대화 하는 parameter를 찾는 것다. change-of-variables formula로 부터 objective loss를 다음과 같이 정의 할 수 있다.
 
 \begin{equation}
-    p_Y(y) = p_Z(z)\left|\det{\frac{\partial z}{\partial y}}\right|. \\ \log p_Y(y) = \log p_Z(z) + \log\left|\det{\frac{\partial z}{\partial y}}\right| \\ \mathcal{L}(y) = \frac{||z||^2_2}{2} - \log \left| \det{\frac{\partial z}{\partial y}}\right|.
+    p_Y(y) = p_Z(z)\left|\det{\frac{\partial z}{\partial y}}\right|. \\\ \log p_Y(y) = \log p_Z(z) + \log\left|\det{\frac{\partial z}{\partial y}}\right| \\\ \mathcal{L}(y) = \frac{||z||^2_2}{2} - \log \left| \det{\frac{\partial z}{\partial y}}\right|.
 \end{equation}
 
 두번째 식에서 $p_Z(z)$를 standard normal distribution으로 설정하여 최종적인 식을 도출 하였다.
@@ -110,7 +110,7 @@ scoring function으로 negative log-likelihood를 사용하였다.
 robust한 결과를 얻기위해 input image 에 여러 transformation 함수를 적용하여 평균을 냈다.  
 
 \begin{equation}
-    \tau (x) = \mathbb{E}_{T_i \in \mathcal{T}} [-\log p_Z(f_{NF}(f_{ex}(T_i(x))))]
+    \tau (x) = \mathbb{E}_{T_i \in \mathcal{T}} [-\log{p_Z(f_{NF}(f_{ex}(T_i(x))))}]
 \end{equation}
 
 where $T_i (x) \in \mathcal{T}$.
@@ -120,7 +120,7 @@ anomaly score $\tau(x)$ 와 threshold $\theta$ 를 이용하여 최종 판정
 \begin{equation}
     \mathcal{A}(x)= 
     \begin{cases}
-        1,& \text{for } \tau(x)\geq \theta \\
+        1,& \text{for } \tau(x)\geq \theta \\\
         0,& \text{for } \tau(x)< \theta
     \end{cases}
 \end{equation}
