@@ -98,6 +98,7 @@ MVTec AD, Magnetic Tile Defects(MTD) dataset을 사용하였다.
 문제의 목적은 extracted features $y\in Y$ 가 주어졌을 때 likelihood를 최대화 하는 parameter를 찾는 것다. change-of-variables formula로 부터 objective loss를 다음과 같이 정의 할 수 있다.
 
 \begin{equation}
+    \nonumber
     p_Y(y) = p_Z(z)\left|\det{\frac{\partial z}{\partial y}}\right|. \\\ 
     \log{p_Y(y)} = \log p_Z(z) + \log\left|\det{\frac{\partial z}{\partial y}}\right|. \\\ 
     \mathcal{L}(y) = \frac{||z||^2_2}{2} - \log \left| \det{\frac{\partial z}{\partial y}}\right|.
