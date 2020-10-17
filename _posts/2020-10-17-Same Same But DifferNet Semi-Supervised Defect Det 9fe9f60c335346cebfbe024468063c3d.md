@@ -162,6 +162,8 @@ normalizing flow-based density estimation 을 통한 defect detection model(Diff
 
 비교적 적은 양의 training sample을 가지고도 좋은 성능을 보이는 것을 확인 할 수 있다.
 
+fin.
+
 ---
 
 <!--
