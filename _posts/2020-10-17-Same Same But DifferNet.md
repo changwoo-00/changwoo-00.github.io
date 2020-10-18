@@ -153,7 +153,7 @@ MVTec AD, Magnetic Tile Defects(MTD) dataset을 사용하였다.
 
 
 
-여기서 $p_Z(z)$를 standard normal distribution으로 다음의 최종적인 식을 도출 하였다.
+여기서 $p_Z(z)$를 standard normal distribution으로 설정하여 다음의 최종적인 식을 도출 하였다.
 
 \begin{equation}
     \nonumber
