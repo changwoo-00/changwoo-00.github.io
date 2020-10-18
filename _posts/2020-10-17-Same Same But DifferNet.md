@@ -6,15 +6,21 @@ use_math: true
 
 # Same Same But DifferNet: Semi-Supervised Defect Detection with Normalizing Flows
 
-Marco Rudolph, Bastian Wandt, Bodo Rosenhahn
+_Marco Rudolph, Bastian Wandt, Bodo Rosenhahn_
 
 <!--(정리 20.10.2)-->
 
-### 목적
+<br/>
+
+<br/>
+
+## 목적
 
 기존의 anomaly detection 방법들은 subtle difference를 잡아내지 못했다.  이 논문에서는 cnn에서 추출한 image feature로 부터 정확한 density 함수를 추출해내 이 문제를 해결하고자 한다.
 
-### Introduction
+<br/>
+
+## Introduction
 
 이를 위해 저자는 anomaly detection 논문에서 주로 사용되어온 variational autoencoder나 GAN이 아니라 feature space와 latent space 사이의 bijective map이 가능한 normalizing flow 방식을 사용한다.
 
@@ -63,7 +69,9 @@ Ardizzone et al. (Invertible Neural Networks)
 
 -->
 
-### Baseline method
+<br/>
+
+## Baseline method
 
 
 
@@ -75,12 +83,15 @@ Ardizzone et al. (Invertible Neural Networks)
 </center>
 
 
+Feature extractor($f_{ex}$)와 Normalizing flow model($f_{NF}$)을 결합하여 latent vector $z$를 계산하도록 설계하였다.
 
 anomaly free training images : $x \in X$
 
 image features : $y \in Y$
 
 latent vectors : $z$ (with a well-defined distribution $p_Z(z)$ (normal gaussian))
+
+<br/>
 
 **feature extractor**
 
@@ -90,11 +101,13 @@ latent vectors : $z$ (with a well-defined distribution $p_Z(z)$ (normal gaussian
 
 
 
-Imagenet dataset으로 pretrained 된 AlexNet을 사용함.
+feature extractor로 Imagenet dataset으로 pretrained 된 AlexNet을 사용함.
 
-3가지 input image size의 feature 사용 (448x448, 224x224, 112x112)
+3가지 input image size의 feature 사용 (448x448, 224x224, 112x112).
 
 사용된 총 feature의 개수는 3*256=768.
+
+<br/>
 
 **normalizing flow**
 
@@ -114,25 +127,52 @@ internal function s, t는 fully-connected network 사용
           <figcaption>Architecture of one block inside the normalizing flow</figcaption>
     </figure>
 </center>
+<br/>
 
+### Localization
 
+Gradient를 계산하여 localization map을 얻을 수 있지만 이부분에 대해 집중하지는 않았다고 한다.
 
-### Dataset
+<br/>
+
+## Dataset
 
 MVTec AD, Magnetic Tile Defects(MTD) dataset을 사용하였다.
 
-### Training
+<br/>
+
+## Training
 
 문제의 목적은 extracted features $y\in Y$ 가 주어졌을 때 likelihood를 최대화 하는 parameter를 찾는 것다. change-of-variables formula로 부터 objective loss를 다음과 같이 정의 할 수 있다.
 
+
+
 \begin{equation}
     \nonumber
-    p_Y(y) = p_Z(z)\left|\det{\frac{\partial z}{\partial y}}\right| \\\ 
-    \log{p_Y(y)} = \log p_Z(z) + \log\left|\det{\frac{\partial z}{\partial y}}\right| \\\ 
-    \mathcal{L}(y) = \frac{||z||^2_2}{2} - \log \left| \det{\frac{\partial z}{\partial y}}\right|
+    p\_Y(y) = p\_Z(z)\left|\det{\frac{\partial z}{\partial y}}\right| \\\
+    \log{p\_Y(y)} = \log p\_Z(z) + \log\left|\det{\frac{\partial z}{\partial y}}\right| \\\
+
+​    \mathcal{L}(y) = \frac{||z||^2\_2}{2} - \log \left| \det{\frac{\partial z}{\partial y}}\right|
+
 \end{equation}
 
-두번째 식에서 $p_Z(z)$를 standard normal distribution으로 설정하여 최종적인 식을 도출 하였다.
+
+
+여기서 $p_Z(z)$를 standard normal distribution으로 다음의 최종적인 식을 도출 하였다.
+
+
+
+\begin{equation}
+
+​    \nonumber
+
+
+
+\end{equation}
+
+
+
+<br/>
 
 ### Scoring Function
 
@@ -160,11 +200,9 @@ anomaly score $\tau(x)$ 와 threshold $\theta$ 를 이용하여 최종 판정
 
 where $\mathcal{A}(x) = 1$ indicates an anomaly.
 
-### Localization
+<br/>
 
-Localization에 대해 최적화 하지는 않았지만 gradient를 계산하여 localization map을 얻을 수는 있다.
-
-### Results
+## Results
 
 Detection
 
@@ -189,7 +227,9 @@ Localization
           <figcaption>MVTec AD 에 대한 Localization 결과</figcaption>
     </figure>
 </center>
-### Discussion
+<br/>
+
+## Discussion
 
 normalizing flow-based density estimation 을 통한 defect detection model(DifferNet)을 제안하였다.
 
