@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paper Review"
+title: "Paper Summary"
 use_math: true
 ---
 
