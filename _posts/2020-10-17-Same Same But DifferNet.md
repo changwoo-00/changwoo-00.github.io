@@ -4,7 +4,7 @@ title: "Paper Summary"
 use_math: true
 ---
 
-# Same Same But DifferNet: Semi-Supervised Defect Detection with Normalizing Flows
+# Same Same But DifferNet: Semi-Supervised Defect Detection with Normalizing Flows - _arXiv 20_
 
 _Marco Rudolph, Bastian Wandt, Bodo Rosenhahn_
 
@@ -77,7 +77,7 @@ Ardizzone et al. (Invertible Neural Networks)
 
  <center>
     <figure>
-          <img src="/assets/Untitled.png" alt="Untitled" style="width:100%">
+          <img src="/assets/2020-10-17-Same Same But DifferNet/Untitled.png" alt="Untitled" style="width:100%">
           <figcaption>Overview of pipeline</figcaption>
     </figure>
 </center>
@@ -123,7 +123,7 @@ internal function s, t는 fully-connected network 사용
 
 <center>
     <figure>
-          <img src="/assets/Untitled%201.png" alt="Untitled2" style="width:100%">
+          <img src="/assets/2020-10-17-Same Same But DifferNet/Untitled%201.png" alt="Untitled2" style="width:100%">
           <figcaption>Architecture of one block inside the normalizing flow</figcaption>
     </figure>
 </center>
@@ -198,9 +198,9 @@ one-class SVM, 1-NN, GeoTrans, GANomaly, 그리고 DSEBM에 대해 AUROC를 통�
 
 <center>
     <figure>
-        <img src="/assets/Untitled%202.png" alt="Untitled2" style="width:100%">
-        <img src="/assets/Untitled%203.png" alt="Untitled3" style="width:70%">
-          <img src="/assets/Untitled%204.png" alt="Untitled4" style="width:70%">
+        <img src="/assets/2020-10-17-Same Same But DifferNet/Untitled%202.png" alt="Untitled2" style="width:100%">
+        <img src="/assets/2020-10-17-Same Same But DifferNet/Untitled%203.png" alt="Untitled3" style="width:70%">
+          <img src="/assets/2020-10-17-Same Same But DifferNet/Untitled%204.png" alt="Untitled4" style="width:70%">
           <figcaption>Training Sample 갯수에 따른 성능 변화</figcaption>
     </figure>
 </center>
@@ -211,7 +211,7 @@ Localization
 
 <center>
     <figure>
-          <img src="/assets/Untitled%205.png" alt="Untitled" style="width:60%">
+          <img src="/assets/2020-10-17-Same Same But DifferNet/Untitled%205.png" alt="Untitled" style="width:60%">
           <figcaption>MVTec AD 에 대한 Localization 결과</figcaption>
     </figure>
 </center>

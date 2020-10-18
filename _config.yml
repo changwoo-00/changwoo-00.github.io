@@ -16,10 +16,9 @@ cayman-blog:
 theme: # leave it empty
 
 # social
-author: lorepirri
+author: C.Ha
 image: /thumbnail-jumbo.png
-twitter:
-  username: lorepirri
+
 
 plugins:
   - jekyll-target-blank
@@ -27,4 +26,4 @@ plugins:
 target-blank:
     rel: nofollow
 
-header_page_refs: ['now', 'about', 'contact','hello']
+header_page_refs: [ 'about', 'contact']
