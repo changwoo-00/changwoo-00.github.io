@@ -189,9 +189,6 @@ Localization
           <figcaption>MVTec AD 에 대한 Localization 결과</figcaption>
     </figure>
 </center>
-
-*MVTec AD 에 대한 Localization 결과*
-
 ### Discussion
 
 normalizing flow-based density estimation 을 통한 defect detection model(DifferNet)을 제안하였다.
