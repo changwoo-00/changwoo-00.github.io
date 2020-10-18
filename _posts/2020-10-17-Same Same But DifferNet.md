@@ -149,28 +149,16 @@ MVTec AD, Magnetic Tile Defects(MTD) dataset을 사용하였다.
 
 \begin{equation}
     \nonumber
-    p\_Y(y) = p\_Z(z)\left|\det{\frac{\partial z}{\partial y}}\right| \\\
-    \log{p\_Y(y)} = \log p\_Z(z) + \log\left|\det{\frac{\partial z}{\partial y}}\right| \\\
-
-​    \mathcal{L}(y) = \frac{||z||^2\_2}{2} - \log \left| \det{\frac{\partial z}{\partial y}}\right|
-
-\end{equation}
+    p\_Y(y) = p\_Z(z)\left|\det{\frac{\partial z}{\partial y}}\right| \\\ \log{p\_Y(y)} = \log p\_Z(z) + \log\left|\det{\frac{\partial z}{\partial y}}\right|\end{equation}
 
 
 
 여기서 $p_Z(z)$를 standard normal distribution으로 다음의 최종적인 식을 도출 하였다.
 
-
-
 \begin{equation}
-
-​    \nonumber
-
-
-
+    \nonumber
+    \mathcal{L}(y) = \frac{||z||^2_2}{2} - \log \left| \det{\frac{\partial z}{\partial y}}\right|
 \end{equation}
-
-
 
 <br/>
 
