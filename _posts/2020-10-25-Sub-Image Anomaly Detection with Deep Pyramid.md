@@ -24,7 +24,9 @@ pre-trained 모델을 직접 사용하기 때문에 따로 학습이 필요가 �
 
 Feature Extractor로 pre-trained ResNet(Wide-ResNet50x2)를 사용하였다.
 
-$$f_{i}=F\left(x_{i}\right)$$
+\begin{equation}
+	f_{i}=F\left(x_{i}\right)
+\end{equation}
 
 $F$ : global feature extractor, $x_i$ : image, $f_i$ : extracted feature 를 의미한다.
 
@@ -40,7 +42,9 @@ test image $y$에 대해 training set 에서 $K$ nearest  image, $N_k(f_y)$ 를 
 
 distance는 image(feature)-level Euclidean metric을 사용하였다.
 
-$$d(y)=\frac{1}{K} \sum_{f \in N_{K}\left(f_{y}\right)}\left\|f-f_{y}\right\|^{2}$$
+\begin{equation}
+	d(y)=\frac{1}{K} \sum_{f \in N_{K}\left(f_{y}\right)}\left\|f-f_{y}\right\|^{2}
+\end{equation}
 
 여기서 image가 정상인지 비정상인지 threshold $\tau$를 기준으로 판정한다.
 
@@ -50,7 +54,9 @@ image 가 비정상인지 판정하고 난 이후에 해야 할 일은 정확히
 
 image 단위의 계산과 유사하다. 다만 여기서는 pixel 단위의 feature extractor $F(x_i,p)$를 통해 모든 pixel location $p \in P$ 에 대한 $\kappa$ nearest gallery of features, $G=\left\{F\left(x_{1}, p\right) \mid p \in P\}\left.\cup\left\{F\left(x_{2}, p\right) \mid p \in P\right\}\right\} . . \cup\left\{F\left(x_{K}, p\right) \mid p \in P\right\}\right\}$ 를 사용한다. 
 
-$$d(y, p)=\frac{1}{\kappa} \sum_{f \in N_{\kappa}(F(y, p))}\|f-F(y, p)\|^{2}$$
+\begin{equation}
+	d(y, p)=\frac{1}{\kappa} \sum_{f \in N_{\kappa}(F(y, p))}\|f-F(y, p)\|^{2}
+\end{equation}
 
 모든 $K$ nearest normal image에서 threshold $\theta$에 대해 $d(y,p) > \theta$ 를 만족하는 경우, 즉 가까운 pixel을 찾지 못하는 경우에 해당 pixel을 anomalous로 판정한다.
 
