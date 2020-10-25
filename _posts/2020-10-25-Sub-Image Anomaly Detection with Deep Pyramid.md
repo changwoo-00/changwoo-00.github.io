@@ -4,7 +4,7 @@ title: "Paper Summary"
 use_math: true
 ---
 
-# Sub-Image Anomaly Detection with Deep Pyramid Correspondences - arXiv 20
+# Sub-Image Anomaly Detection with Deep Pyramid Correspondences - _arXiv 20_
 
 <!-- 작성일자 : 201025 -->
 
