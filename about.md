@@ -9,7 +9,7 @@ order: 0
 
 <!--_The beginning of a long journey_-->
 
-A beginner in ML/DL.
+A beginner at ML/DL.
 
 :)
 
