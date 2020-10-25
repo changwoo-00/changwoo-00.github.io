@@ -1,6 +1,12 @@
-# Sub-Image Anomaly Detection with Deep Pyramid Correspondences | arXiv 20
+---
+layout: post
+title: "Paper Summary"
+use_math: true
+---
 
-<!— 작성일자 : 201025 —>
+# Sub-Image Anomaly Detection with Deep Pyramid Correspondences - arXiv 20
+
+<!-- 작성일자 : 201025 -->
 
 *Niv Cohen, Yedid Hoshen*
 
@@ -64,25 +70,54 @@ pixel-wise anomaly score의 경우 계산 후 Gaussian filter($\sigma = 4$)로 s
 
 ## MVTec AD
 
-![Sub-Image%20Anomaly%20Detection%20with%20Deep%20Pyramid%20Corr%2099ec570eb7ca4a50baaf5f958ab867cf/Untitled.png](Sub-Image%20Anomaly%20Detection%20with%20Deep%20Pyramid%20Corr%2099ec570eb7ca4a50baaf5f958ab867cf/Untitled.png)
+<center>
+    <figure>
+          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled.png" alt="Untitled" style="width:100%">
+          <figcaption></figcaption>
+    </figure>
+</center>
+<center>
+    <figure>
+          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled%201.png" alt="Untitled" style="width:100%">
+          <figcaption></figcaption>
+    </figure>
+</center>
 
-![Sub-Image%20Anomaly%20Detection%20with%20Deep%20Pyramid%20Corr%2099ec570eb7ca4a50baaf5f958ab867cf/Untitled%201.png](Sub-Image%20Anomaly%20Detection%20with%20Deep%20Pyramid%20Corr%2099ec570eb7ca4a50baaf5f958ab867cf/Untitled%201.png)
 
 ## Shanghai Tech Campus Dataset
 
-![Sub-Image%20Anomaly%20Detection%20with%20Deep%20Pyramid%20Corr%2099ec570eb7ca4a50baaf5f958ab867cf/Untitled%202.png](Sub-Image%20Anomaly%20Detection%20with%20Deep%20Pyramid%20Corr%2099ec570eb7ca4a50baaf5f958ab867cf/Untitled%202.png)
+<center>
+    <figure>
+          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled%202.png" alt="Untitled" style="width:100%">
+          <figcaption></figcaption>
+    </figure>
+</center>
+<center>
+    <figure>
+          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled%203.png" alt="Untitled" style="width:100%">
+          <figcaption></figcaption>
+    </figure>
+</center>
 
-![Sub-Image%20Anomaly%20Detection%20with%20Deep%20Pyramid%20Corr%2099ec570eb7ca4a50baaf5f958ab867cf/Untitled%203.png](Sub-Image%20Anomaly%20Detection%20with%20Deep%20Pyramid%20Corr%2099ec570eb7ca4a50baaf5f958ab867cf/Untitled%203.png)
 
 # Ablation Study
 
 Table 6에서 feature pyramid의 각 feature의 resolution에 따른 결과를 확인 할 수 있다. 전체적으로 이들을 함께 사용했을 때 좋은 성능을 보임을 확인 할 수 있다.
 
-![Sub-Image%20Anomaly%20Detection%20with%20Deep%20Pyramid%20Corr%2099ec570eb7ca4a50baaf5f958ab867cf/Untitled%204.png](Sub-Image%20Anomaly%20Detection%20with%20Deep%20Pyramid%20Corr%2099ec570eb7ca4a50baaf5f958ab867cf/Untitled%204.png)
+<center>
+    <figure>
+          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled%204.png" alt="Untitled" style="width:100%">
+          <figcaption></figcaption>
+    </figure>
+</center>
 
 Table 7에서 stage 1에서 K개의 random image를 사용하는 것과 K nearest neighbor를 사용하는 것의 차이를 보여준다. 특히 image 사이의 variation이 큰 "Grid" class의 경우 효과가 컸다고 한다.
-
-![Sub-Image%20Anomaly%20Detection%20with%20Deep%20Pyramid%20Corr%2099ec570eb7ca4a50baaf5f958ab867cf/Untitled%205.png](Sub-Image%20Anomaly%20Detection%20with%20Deep%20Pyramid%20Corr%2099ec570eb7ca4a50baaf5f958ab867cf/Untitled%205.png)
+<center>
+    <figure>
+          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled%205.png" alt="Untitled" style="width:100%">
+          <figcaption></figcaption>
+    </figure>
+</center>
 
 ---
 
