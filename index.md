@@ -8,5 +8,4 @@
 layout: home
 ---
 
-...
 
