@@ -52,7 +52,7 @@ distance는 image(feature)-level Euclidean metric을 사용하였다.
 
 image 가 비정상인지 판정하고 난 이후에 해야 할 일은 정확히 어느 부분이 비정상인지 (pixel 단위에서) 찾는 일이다. (localization, segmentation)
 
-image 단위의 계산과 유사하다. 다만 여기서는 pixel 단위의 feature extractor $F(x_i,p)$를 통해 모든 pixel location $p \in P$ 에 대한 $\kappa$ nearest gallery of features, $G=\left\{F\left(x_{1}, p\right) \mid p \in P\}\left.\cup\left\{F\left(x_{2}, p\right) \mid p \in P\right\}\right\} . . \cup\left\{F\left(x_{K}, p\right) \mid p \in P\right\}\right\}$ 를 사용한다. 
+image 단위의 계산과 유사하다. 다만 여기서는 pixel 단위의 feature extractor $F(x_i,p)$를 통해 모든 pixel location $p \in P$ 에 대한 $\kappa$ nearest gallery of features, $G=\{F(x_{1}, p) \mid p \in P\}.\cup\{F(x_{2}, p) \mid p \in P\}\} . . \cup\{F(x_{K}, p) \mid p \in P\}\}$ 를 사용한다. 
 
 \begin{equation}
 	d(y, p)=\frac{1}{\kappa} \sum_{f \in N_{\kappa}(F(y, p))}\|f-F(y, p)\|^{2}
