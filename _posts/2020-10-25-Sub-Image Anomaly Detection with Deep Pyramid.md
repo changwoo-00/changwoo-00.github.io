@@ -126,7 +126,7 @@ Table 7에서 stage 1에서 K개의 random image를 사용하는 것과 K neares
 </center>
 
 ---
-
+<!--
 # Discussion
 
 ## Anomaly detection via alignment
@@ -144,3 +144,5 @@ image-level kNN → pixel-level kNN reduces computation time.
 # Conclusion
 
 Our method consists of two stages, which are designed to achieve high accuracy and reasonable computational complexity.
+
+-->
