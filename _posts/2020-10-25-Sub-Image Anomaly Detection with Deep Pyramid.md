@@ -52,7 +52,7 @@ distance는 image(feature)-level Euclidean metric을 사용하였다.
 
 image 가 비정상인지 판정하고 난 이후에 해야 할 일은 정확히 어느 부분이 비정상인지 (pixel 단위에서) 찾는 일이다. (localization, segmentation)
 
-image 단위의 계산과 유사하다. 다만 여기서는 pixel 단위의 feature extractor $F(x_i,p)$를 통해 모든 pixel location $p \in P$ 에 대한 $\kappa$ nearest gallery of features, $G=\{F(x_{1}, p) \mid p \in P\}.\cup\{F(x_{2}, p) \mid p \in P\}\} . . \cup\{F(x_{K}, p) \mid p \in P\}\}$ 를 사용한다. 
+image 단위의 계산과 유사하다. 다만 여기서는 pixel 단위의 feature extractor $F(x_i,p)$를 통해 모든 pixel location $p \in P$ 에 대한 $\kappa$ nearest gallery of features, $G = \\{F(x\_{1}, p) \mid p \in P \\}\cup\\{F(x\_{2}, p) \mid p \in P \\}.. \cup \\{F(x\_{K}, p) \mid p \in P \\}$ 를 사용한다.
 
 \begin{equation}
 	d(y, p)=\frac{1}{\kappa} \sum_{f \in N_{\kappa}(F(y, p))}\|f-F(y, p)\|^{2}
@@ -78,13 +78,13 @@ pixel-wise anomaly score의 경우 계산 후 Gaussian filter($\sigma = 4$)로 s
 
 <center>
     <figure>
-          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled.png" alt="Untitled" style="width:100%">
+          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled.png" alt="Untitled" style="width:80%">
           <figcaption></figcaption>
     </figure>
 </center>
 <center>
     <figure>
-          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled%201.png" alt="Untitled" style="width:100%">
+          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled%201.png" alt="Untitled" style="width:80%">
           <figcaption></figcaption>
     </figure>
 </center>
@@ -94,13 +94,13 @@ pixel-wise anomaly score의 경우 계산 후 Gaussian filter($\sigma = 4$)로 s
 
 <center>
     <figure>
-          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled%202.png" alt="Untitled" style="width:100%">
+          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled%202.png" alt="Untitled" style="width:80%">
           <figcaption></figcaption>
     </figure>
 </center>
 <center>
     <figure>
-          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled%203.png" alt="Untitled" style="width:100%">
+          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled%203.png" alt="Untitled" style="width:80%">
           <figcaption></figcaption>
     </figure>
 </center>
@@ -112,7 +112,7 @@ Table 6에서 feature pyramid의 각 feature의 resolution에 따른 결과를 �
 
 <center>
     <figure>
-          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled%204.png" alt="Untitled" style="width:100%">
+          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled%204.png" alt="Untitled" style="width:80%">
           <figcaption></figcaption>
     </figure>
 </center>
@@ -120,7 +120,7 @@ Table 6에서 feature pyramid의 각 feature의 resolution에 따른 결과를 �
 Table 7에서 stage 1에서 K개의 random image를 사용하는 것과 K nearest neighbor를 사용하는 것의 차이를 보여준다. 특히 image 사이의 variation이 큰 "Grid" class의 경우 효과가 컸다고 한다.
 <center>
     <figure>
-          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled%205.png" alt="Untitled" style="width:100%">
+          <img src="/assets/2020-10-25-Sub-Image Anomaly Detection with Deep Pyramid/Untitled%205.png" alt="Untitled" style="width:80%">
           <figcaption></figcaption>
     </figure>
 </center>
