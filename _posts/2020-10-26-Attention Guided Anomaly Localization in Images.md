@@ -1,10 +1,16 @@
+---
+layout: post
+title: "Paper Summary"
+use_math: true
+---
+
 # Attention Guided Anomaly Localization in Images
 
 *Shashanka Venkataramanan, Kuan-Chuan Peng, Rajat Vikram Singh, Abhijit Mahalanobis*
 
 [*https://arxiv.org/abs/1911.08616v4*](https://arxiv.org/abs/1911.08616v4)
 
-<!—작성일 : 20.10.26 —>
+<!--작성일자 : 201026 -->
 
 # Introduction
 
@@ -44,11 +50,21 @@ input image $x_{test}$ 와 resconstructed image $\hat{x}_{test}$사이의 nomali
 
 z로 부터 attention map $A_{test}$ 을 구하고 $(\mathbf{1} - A_{test})$를 anomalous attention map으로 사용하였다. localization 또한 threshold를 0.5로 설정하여 performance를 측정하였다.
 
-![Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled.png](Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled.png)
 
-Fig. 1
+<center>
+    <figure>
+        <img src="/assets/2020-10-26-Attention Guided Anomaly Localization in Images/Untitled.png" alt="Untitled" style="width:80%">
+        <figcaption>Fig. 1</figcaption>
+    </figure>
+</center>
 
-![Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%201.png](Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%201.png)
+<center>
+    <figure>
+        <img src="/assets/2020-10-26-Attention Guided Anomaly Localization in Images/Untitled%201.png" alt="Untitled" style="width:80%">
+        <figcaption></figcaption>
+    </figure>
+</center>
+
 
 ## Weakly Supervised Approach: $\text{CAVGA}_w$
 
@@ -116,23 +132,53 @@ mSTC dataset에 대한 localization 결과는 Table 4에서 확인 할 수 있�
 
 LAG dataset에 대한 localization 결과는 Table 5에서 확인 할 수 있다.
 
-![Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%202.png](Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%202.png)
 
-![Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%203.png](Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%203.png)
+<center>
+<figure>
+<img src="/assets/2020-10-26-Attention Guided Anomaly Localization in Images/Untitled%202.png" alt="Untitled" style="width:80%">
+<figcaption></figcaption>
+</figure>
+</center>
+
+<center>
+<figure>
+<img src="/assets/2020-10-26-Attention Guided Anomaly Localization in Images/Untitled%203.png" alt="Untitled" style="width:80%">
+<figcaption></figcaption>
+</figure>
+</center>
+
 
 ### Performance on anomaly detection
 
 MVTAD, LAG dataset 에 대한 anomaly detection 결과를 각각 Table 6, Table 5에서 확인 할 수 있다.
 
-![Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%204.png](Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%204.png)
+<center>
+<figure>
+<img src="/assets/2020-10-26-Attention Guided Anomaly Localization in Images/Untitled%204.png" alt="Untitled" style="width:80%">
+<figcaption></figcaption>
+</figure>
+</center>
 
-![Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%205.png](Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%205.png)
+
+<center>
+<figure>
+<img src="/assets/2020-10-26-Attention Guided Anomaly Localization in Images/Untitled%205.png" alt="Untitled" style="width:80%">
+<figcaption></figcaption>
+</figure>
+</center>
+
 
 # Ablation Study
 
 Table 8에서 latent variable $z$, expansion loss $L_{ae}$, $L_{cga}$에 대한 ablation test 결과를 볼 수 있다. Method 이름 뒤에 *가 붙은 경우는 1-d(flattened) latent variable $z$ 를 사용했음을 의미한다.
 
-![Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%206.png](Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%206.png)
+<center>
+<figure>
+<img src="/assets/2020-10-26-Attention Guided Anomaly Localization in Images/Untitled%206.png" alt="Untitled" style="width:80%">
+<figcaption></figcaption>
+</figure>
+</center>
+
 
 ## References
 
@@ -143,5 +189,6 @@ Table 8에서 latent variable $z$, expansion loss $L_{ae}$, $L_{cga}$에 대한 
 [49] Selvaraju, R.R., Cogswell, M., Das, A., Vedantam, R., Parikh, D., Batra, D.: Grad-cam: Visual explanations from deep networks via gradient-based localization. In: Proceedings of the IEEE International Conference on Computer Vision. pp. 618–626 (2017)
 
 ---
-
+<!--
 Unlike traditional autoencoders[6, 18] where the latent variable is flattened, inspired from [4], we use a convolutional latent variable to preserve the spatial relation between the input and the latent variable
+-->
