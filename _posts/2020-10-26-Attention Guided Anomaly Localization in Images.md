@@ -39,7 +39,7 @@ Defect에 대한 정보를 사전에 알 수 없는 Unsupervised learning을 가
 \end{equation}
 
 
-여기서 $|A|$는 전체 요소의 갯수이며(feature size), $A_{i,j}$는 $A$의 $(i, j)$ 위치의 요소이며, $A_{i,j}\in [0,1]$ 이다. 최종적으로는 $N$ 개의 이미지에 대한 평균을 사용한다.
+여기서 $|A|$는 전체 요소의 갯수이며(feature size), $A\_{i,j}$는 $A$의 $(i, j)$ 위치의 요소이며, $A\_{i,j}\in [0,1]$ 이다. 최종적으로는 $N$ 개의 이미지에 대한 평균을 사용한다.
 
 Attention expansion loss를 추가함으로 해서 attention map이 전체 이미지에 집중하도록 유도하였고  Fig. 1에서 효과를 확인 할 수 있다.
 
@@ -76,11 +76,11 @@ z로 부터 attention map $A_{test}$ 을 구하고 $(\mathbf{1} - A_{test})$를 
 
 몇몇의 localize label 데이터가 존재할때 classifier와 loss를 추가하여 weakly supervised $\text{CAVGA}$를 만들 수 있다.
 
-Fig. 2. (b)에서 $\text{CAVGA}_w$ 의 형태를 확인 할 수 있다. latent variable z를 1차원으로 펼친 후 fully connected layer로 정상/비정상의 binary-class classifier($C$)를 만들고 binary cross entropy loss $L_{bce}$ 를 통해 학습 시킨다. 
+Fig. 2. (b)에서 $\text{CAVGA}\_w$ 의 형태를 확인 할 수 있다. latent variable z를 1차원으로 펼친 후 fully connected layer로 정상/비정상의 binary-class classifier($C$)를 만들고 binary cross entropy loss $L\_{bce}$ 를 통해 학습 시킨다. 
 
-input image x, ground truth label y, 가 주어졌을 때 $p\in \{c_a, c\}$ 을 $C$의 prediction이라 한다. 여기서 $c_a, c_n$ 은 anomalous, normal class를 의미한다.
+input image x, ground truth label y, 가 주어졌을 때 $p\in \{c\_a, c\}$ 을 $C$의 prediction이라 한다. 여기서 $c\_a, c\_n$ 은 anomalous, normal class를 의미한다.
 
-$x$가 정상 이미지($y = c_n$)인 경우 $p$ 로부터 Grad-CAM을 통해 비정상, 정상 class에 대한 attention map $A_x^{c_a}, A_x^{c_n}$ 을 구한다. $x$가 정상 이미지이기 때문에 각각 minimize, maximize 해야 한다. 
+$x$가 정상 이미지($y = c\_n$)인 경우 $p$ 로부터 Grad-CAM을 통해 비정상, 정상 class에 대한 attention map $A\_x^{c\_a}, A_x^{c\_n}$ 을 구한다. $x$가 정상 이미지이기 때문에 각각 minimize, maximize 해야 한다. 
 
 정상으로 분류된 정상이미지에 대해서만 다음과 같이 complementary guided attention loss를 정의 한다.
 
@@ -89,15 +89,15 @@ $x$가 정상 이미지($y = c_n$)인 경우 $p$ 로부터 Grad-CAM을 통해 �
 \end{equation}
 
 
-$L_{cga}$는 $L_{cga,1}$을 $N$개의 이미지에 대해 평균한 값이다. 
+$L\_{cga}$는 $L\_{cga,1}$을 $N$개의 이미지에 대해 평균한 값이다. 
 
-최종적인 objective function $L_{final}$은 다음과 같다.
+최종적인 objective function $L\_{final}$은 다음과 같다.
 
 \begin{equation}
     L_{\text {final}}=w_{r} L+w_{a d v} L_{a d v}+w_{c} L_{b c e}+w_{c g a} L_{c g a}
 \end{equation}
 
-여기서 $\omega_r, \omega_{adv}, \omega_c, \omega_{cga}$는 각각 $1, 1, 0.001, 0.01$로 설정하였다.
+여기서 $\omega\_r, \omega\_{adv}, \omega\_c, \omega\_{cga}$는 각각 $1, 1, 0.001, 0.01$로 설정하였다.
 
 # Experimental Setup
 
