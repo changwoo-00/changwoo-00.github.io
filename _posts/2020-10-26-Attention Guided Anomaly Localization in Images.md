@@ -1,0 +1,147 @@
+# Attention Guided Anomaly Localization in Images
+
+*Shashanka Venkataramanan, Kuan-Chuan Peng, Rajat Vikram Singh, Abhijit Mahalanobis*
+
+[*https://arxiv.org/abs/1911.08616v4*](https://arxiv.org/abs/1911.08616v4)
+
+<!—작성일 : 20.10.26 —>
+
+# Introduction
+
+이 논문에서는 unsupervised setting에서 attention expansion loss ($L_{ae}$)를 weakly supervised setting에서 complementary guided attention loss ($L_{cga}$)를 도입하여 MVTAD, mSTC dataset 등에서 anomaly detection 및 localization 성능이 향상됨을 보이고 있다.
+
+# Proposed Approach: $\text{CAVGA}$
+
+## Unsupervised Approach: $\text{CAVGA}_{u}$
+
+### Convolutional latent variable
+
+기본적으로 Variational Autoencoder 모델을 사용하였다.
+
+일반적인 1-d latent variable 대신 input과 latent variable 사이의 spatial relation을 보존할 수 있는 convolutional latent variable을 사용하였다. [4]
+
+### Attention expansion loss $L_{ae}$
+
+이 논문에서는 anomaly를 localize 하는 방식으로 attention map을 사용하였다. attention map(A)을 얻기위해 Grad-CAM[49] 방식을 사용하였다.
+
+Defect에 대한 정보를 사전에 알 수 없는 Unsupervised learning을 가정했을 때 합리적으로 생각할 수 있는 방법은 학습시 정상 이미지 전체에 집중하도록 하는 것이다. (사람이 defect을 찾는 방식도 마찬가지이다.)
+
+이런 아이디어를 바탕으로 학습시 정상 이미지의 모든 feature representation에 집중하도록 하기 위해 attention expansion loss를 제안하였다.
+
+$$L_{a e, 1}=\frac{1}{|A|} \sum_{i, j}\left(1-A_{i, j}\right)$$
+
+여기서 $|A|$는 전체 요소의 갯수이며(feature size), $A_{i,j}$는 $A$의 $(i, j)$ 위치의 요소이며, $A_{i,j}\in [0,1]$ 이다. 최종적으로는 $N$ 개의 이미지에 대한 평균을 사용한다.
+
+Attention expansion loss를 추가함으로 해서 attention map이 전체 이미지에 집중하도록 유도하였고  Fig. 1에서 효과를 확인 할 수 있다.
+
+전체 objective function은 다음과 같다.
+
+$$L_{final} = \omega_r L + \omega_{adv} L_{adv} + \omega_{ae} L_{ae}$$
+
+여기서 $\omega_r, \omega_{adv}, \omega_{ae}$ 는 각각 1, 1, 0,01로 설정했다고 한다.
+
+input image $x_{test}$ 와 resconstructed image $\hat{x}_{test}$사이의 nomalized pixel-wise difference를 anomalous score $s_a$ 로 정하고 threshold 0.5를 기준으로 anomaly를 판별하였다. 
+
+z로 부터 attention map $A_{test}$ 을 구하고 $(\mathbf{1} - A_{test})$를 anomalous attention map으로 사용하였다. localization 또한 threshold를 0.5로 설정하여 performance를 측정하였다.
+
+![Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled.png](Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled.png)
+
+Fig. 1
+
+![Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%201.png](Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%201.png)
+
+## Weakly Supervised Approach: $\text{CAVGA}_w$
+
+몇몇의 localize label 데이터가 존재할때 classifier와 loss를 추가하여 weakly supervised $\text{CAVGA}$를 만들 수 있다.
+
+Fig. 2. (b)에서 $\text{CAVGA}_w$ 의 형태를 확인 할 수 있다. latent variable z를 1차원으로 펼친 후 fully connected layer로 정상/비정상의 binary-class classifier($C$)를 만들고 binary cross entropy loss $L_{bce}$ 를 통해 학습 시킨다. 
+
+input image x, ground truth label y, 가 주어졌을 때 $p\in \{c_a, c\}$ 을 $C$의 prediction이라 한다. 여기서 $c_a, c_n$ 은 anomalous, normal class를 의미한다.
+
+$x$가 정상 이미지($y = c_n$)인 경우 $p$ 로부터 Grad-CAM을 통해 비정상, 정상 class에 대한 attention map $A_x^{c_a}, A_x^{c_n}$ 을 구한다. $x$가 정상 이미지이기 때문에 각각 minimize, maximize 해야 한다. 
+
+정상으로 분류된 정상이미지에 대해서만 다음과 같이 complementary guided attention loss를 정의 한다.
+
+$$L_{c g a, 1}=\frac{\mathbb{1}\left(p=y=c_{n}\right)}{\left|A_{x}^{c_{n}}\right|} \sum_{i, j}\left(1-\left(A_{x}^{c_{n}}\right)_{i, j}+\left(A_{x}^{c_{a}}\right)_{i, j}\right)$$
+
+$L_{cga}$는 $L_{cga,1}$을 $N$개의 이미지에 대해 평균한 값이다. 
+
+최종적인 objective function $L_{final}$은 다음과 같다.
+
+$$L_{\text {final}}=w_{r} L+w_{a d v} L_{a d v}+w_{c} L_{b c e}+w_{c g a} L_{c g a}$$
+
+여기서 $\omega_r, \omega_{adv}, \omega_c, \omega_{cga}$는 각각 $1, 1, 0.001, 0.01$로 설정하였다.
+
+# Experimental Setup
+
+### Benchmark datasets
+
+anomaly detection에 MVTAD, mSTC, LAG, MNIST, CIFAR-10, Fashion-MNIST 데이터셋을, 
+
+anomaly localization에 MVTAD , mSTC, LAG 데이터셋을 사용하였다.
+
+### Baseline methods
+
+anomaly detection
+
+LAG dataset은 CAM, GBP, Smooth-Grad, Patho-GAN와 비교하였다.
+
+MNIST, CIFAR-10, Fashion-MNIST dataset은 LSA, OCGAN, ULSLM, CapsNet PP-based, CapsNet RE-based, AnoGAN, ADGAN, beta-VAE과 비교하였다.
+
+anomaly localization
+
+AVID, AE_L2, AE_SSIM, AnoGAN, CNN feature dictionary, texture inspection(TI), gamma-VAE grad, LSA, ADVAE, variation model(VM)과 비교하였다.
+
+### Architecture details
+
+encoder로 ImageNet dataset으로 pre-trained 된 ResNet-18을 finetuning 하여 사용하였다. [9]를 참고 및 수정하여 residual decoder로 사용하였다. 이 모델을 $\text{CAVGA-R}$이라 부른다. 
+
+한편, based line과 Architecture에 대한 공정한 비교를 위해 Celeb-A로 pre-trained 된 DC-GAN의 discriminator와 generator를 각각 encoder와 decoder로 사용였고, 이를 $\text{CAVGA-D}$라 부른다. 
+
+discriminator는 두 모델 모두 Celeb-A로 pre-trained된 DC-GAN을 사용하였다.
+
+unsupervised, weakly supervised 에 따라 각각 $u$, $w$의 아래 첨자가 붙는다.
+
+### Training and evaluation
+
+Anomaly localization에서는 AuROC, Intersection-over-Union(IoU)을 사용하여 성능을 확인하였다.
+
+# Experimental Results
+
+### Performance on anomaly localization
+
+Table 3에서 MVTAD dataset에 대해 $\text{CAVGA}$와 기타 baseline model들의 category 별 IoU, mean IoU, mean AuROC 성능을 볼 수 있다. 대체적으로 $\text{CAVGA}$ 모델이 더 나은 성능을 보임을 확인 할 수 있으며 특히 $\text{CAVGA-R}_w$ 모델이 가장 높은 성능을 보였다.
+
+mSTC dataset에 대한 localization 결과는 Table 4에서 확인 할 수 있다.
+
+LAG dataset에 대한 localization 결과는 Table 5에서 확인 할 수 있다.
+
+![Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%202.png](Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%202.png)
+
+![Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%203.png](Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%203.png)
+
+### Performance on anomaly detection
+
+MVTAD, LAG dataset 에 대한 anomaly detection 결과를 각각 Table 6, Table 5에서 확인 할 수 있다.
+
+![Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%204.png](Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%204.png)
+
+![Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%205.png](Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%205.png)
+
+# Ablation Study
+
+Table 8에서 latent variable $z$, expansion loss $L_{ae}$, $L_{cga}$에 대한 ablation test 결과를 볼 수 있다. Method 이름 뒤에 *가 붙은 경우는 1-d(flattened) latent variable $z$ 를 사용했음을 의미한다.
+
+![Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%206.png](Attention%20Guided%20Anomaly%20Localization%20in%20Images%2012002dd9d1cf4bed903016bc7f992311/Untitled%206.png)
+
+## References
+
+[4] Baur, C., Wiestler, B., Albarqouni, S., Navab, N.: Deep autoencoding models for unsupervised anomaly segmentation in brain mr images. In: International MICCAI Brainlesion Workshop. pp. 161–169. Springer (2018)
+
+[9] Brock, A., Donahue, J., Simonyan, K.: Large scale GAN training for high fidelity natural image synthesis. In: International Conference on Learning Representations (2019)
+
+[49] Selvaraju, R.R., Cogswell, M., Das, A., Vedantam, R., Parikh, D., Batra, D.: Grad-cam: Visual explanations from deep networks via gradient-based localization. In: Proceedings of the IEEE International Conference on Computer Vision. pp. 618–626 (2017)
+
+---
+
+Unlike traditional autoencoders[6, 18] where the latent variable is flattened, inspired from [4], we use a convolutional latent variable to preserve the spatial relation between the input and the latent variable
