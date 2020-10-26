@@ -34,7 +34,10 @@ Defect에 대한 정보를 사전에 알 수 없는 Unsupervised learning을 가
 
 이런 아이디어를 바탕으로 학습시 정상 이미지의 모든 feature representation에 집중하도록 하기 위해 attention expansion loss를 제안하였다.
 
-$$L_{a e, 1}=\frac{1}{|A|} \sum_{i, j}\left(1-A_{i, j}\right)$$
+\begin{equation}
+    L_{a e, 1}=\frac{1}{|A|} \sum_{i, j}\left(1-A_{i, j}\right)
+\end{equation}
+
 
 여기서 $|A|$는 전체 요소의 갯수이며(feature size), $A_{i,j}$는 $A$의 $(i, j)$ 위치의 요소이며, $A_{i,j}\in [0,1]$ 이다. 최종적으로는 $N$ 개의 이미지에 대한 평균을 사용한다.
 
@@ -42,7 +45,10 @@ Attention expansion loss를 추가함으로 해서 attention map이 전체 이�
 
 전체 objective function은 다음과 같다.
 
-$$L_{final} = \omega_r L + \omega_{adv} L_{adv} + \omega_{ae} L_{ae}$$
+\begin{equation}
+    L_{final} = \omega_r L + \omega_{adv} L_{adv} + \omega_{ae} L_{ae}
+\end{equation}
+
 
 여기서 $\omega_r, \omega_{adv}, \omega_{ae}$ 는 각각 1, 1, 0,01로 설정했다고 한다.
 
@@ -78,13 +84,18 @@ $x$가 정상 이미지($y = c_n$)인 경우 $p$ 로부터 Grad-CAM을 통해 �
 
 정상으로 분류된 정상이미지에 대해서만 다음과 같이 complementary guided attention loss를 정의 한다.
 
-$$L_{c g a, 1}=\frac{\mathbb{1}\left(p=y=c_{n}\right)}{\left|A_{x}^{c_{n}}\right|} \sum_{i, j}\left(1-\left(A_{x}^{c_{n}}\right)_{i, j}+\left(A_{x}^{c_{a}}\right)_{i, j}\right)$$
+\begin{equation}
+    L_{c g a, 1}=\frac{\mathbb{1}\left(p=y=c_{n}\right)}{\left|A_{x}^{c_{n}}\right|} \sum_{i, j}\left(1-\left(A_{x}^{c_{n}}\right)_{i, j}+\left(A_{x}^{c_{a}}\right)_{i, j}\right)
+\end{equation}
+
 
 $L_{cga}$는 $L_{cga,1}$을 $N$개의 이미지에 대해 평균한 값이다. 
 
 최종적인 objective function $L_{final}$은 다음과 같다.
 
-$$L_{\text {final}}=w_{r} L+w_{a d v} L_{a d v}+w_{c} L_{b c e}+w_{c g a} L_{c g a}$$
+\begin{equation}
+    L_{\text {final}}=w_{r} L+w_{a d v} L_{a d v}+w_{c} L_{b c e}+w_{c g a} L_{c g a}
+\end{equation}
 
 여기서 $\omega_r, \omega_{adv}, \omega_c, \omega_{cga}$는 각각 $1, 1, 0.001, 0.01$로 설정하였다.
 
