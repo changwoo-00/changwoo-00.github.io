@@ -78,7 +78,7 @@ $z$로 부터 attention map $A\_{test}$ 을 구하고 $(\mathbf{1} - A\_{test})$
 
 Fig. 2. (b)에서 $\text{CAVGA}\_w$ 의 형태를 확인 할 수 있다. latent variable $z$를 1차원으로 펼친 후 fully connected layer로 정상/비정상의 binary-class classifier($C$)를 만들고 binary cross entropy loss $L\_{bce}$ 를 통해 학습 시킨다. 
 
-input image $x$, ground truth label $y$, 가 주어졌을 때 $p\in \\{c\_a, c\\}$ 을 $C$의 prediction이라 한다. 여기서 $c\_a, c\_n$ 은 anomalous, normal class를 의미한다.
+input image $x$, ground truth label $y$, 가 주어졌을 때 $p\in \\{c\_a, c\_n\\}$ 을 $C$의 prediction이라 한다. 여기서 $c\_a, c\_n$ 은 anomalous, normal class를 의미한다.
 
 $x$가 정상 이미지($y = c\_n$)인 경우 $p$ 로부터 Grad-CAM을 통해 비정상, 정상 class에 대한 attention map $A\_x^{c\_a}, A\_x^{c\_n}$ 을 구한다. $x$가 정상 이미지이기 때문에 각각 minimize, maximize 해야 한다. 
 
