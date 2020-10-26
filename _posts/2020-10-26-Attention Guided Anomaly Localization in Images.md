@@ -14,11 +14,11 @@ use_math: true
 
 # Introduction
 
-이 논문에서는 unsupervised setting에서 attention expansion loss ($L_{ae}$)를 weakly supervised setting에서 complementary guided attention loss ($L_{cga}$)를 도입하여 MVTAD, mSTC dataset 등에서 anomaly detection 및 localization 성능이 향상됨을 보이고 있다.
+이 논문에서는 unsupervised setting에서 attention expansion loss ($L\_{ae}$)를 weakly supervised setting에서 complementary guided attention loss ($L\_{cga}$)를 도입하여 MVTAD, mSTC dataset 등에서 anomaly detection 및 localization 성능이 향상됨을 보이고 있다.
 
 # Proposed Approach: $\text{CAVGA}$
 
-## Unsupervised Approach: $\text{CAVGA}_{u}$
+## Unsupervised Approach: $\text{CAVGA}\_{u}$
 
 ### Convolutional latent variable
 
@@ -26,7 +26,7 @@ use_math: true
 
 일반적인 1-d latent variable 대신 input과 latent variable 사이의 spatial relation을 보존할 수 있는 convolutional latent variable을 사용하였다. [4]
 
-### Attention expansion loss $L_{ae}$
+### Attention expansion loss $L\_{ae}$
 
 이 논문에서는 anomaly를 localize 하는 방식으로 attention map을 사용하였다. attention map(A)을 얻기위해 Grad-CAM[49] 방식을 사용하였다.
 
@@ -35,7 +35,7 @@ Defect에 대한 정보를 사전에 알 수 없는 Unsupervised learning을 가
 이런 아이디어를 바탕으로 학습시 정상 이미지의 모든 feature representation에 집중하도록 하기 위해 attention expansion loss를 제안하였다.
 
 \begin{equation}
-    L_{a e, 1}=\frac{1}{|A|} \sum_{i, j}\left(1-A_{i, j}\right)
+    L\_{a e, 1}=\frac{1}{|A|} \sum\_{i, j}\left(1-A\_{i, j}\right)
 \end{equation}
 
 
@@ -46,15 +46,15 @@ Attention expansion loss를 추가함으로 해서 attention map이 전체 이�
 전체 objective function은 다음과 같다.
 
 \begin{equation}
-    L_{final} = \omega_r L + \omega_{adv} L_{adv} + \omega_{ae} L_{ae}
+    L\_{final} = \omega\_r L + \omega\_{adv} L\_{adv} + \omega\_{ae} L\_{ae}
 \end{equation}
 
 
-여기서 $\omega_r, \omega_{adv}, \omega_{ae}$ 는 각각 1, 1, 0,01로 설정했다고 한다.
+여기서 $\omega\_r, \omega\_{adv}, \omega\_{ae}$ 는 각각 1, 1, 0,01로 설정했다고 한다.
 
-input image $x_{test}$ 와 resconstructed image $\hat{x}_{test}$사이의 nomalized pixel-wise difference를 anomalous score $s_a$ 로 정하고 threshold 0.5를 기준으로 anomaly를 판별하였다. 
+input image $x\_{test}$ 와 resconstructed image $\hat{x}\_{test}$사이의 nomalized pixel-wise difference를 anomalous score $s\_a$ 로 정하고 threshold 0.5를 기준으로 anomaly를 판별하였다. 
 
-z로 부터 attention map $A_{test}$ 을 구하고 $(\mathbf{1} - A_{test})$를 anomalous attention map으로 사용하였다. localization 또한 threshold를 0.5로 설정하여 performance를 측정하였다.
+z로 부터 attention map $A\_{test}$ 을 구하고 $(\mathbf{1} - A\_{test})$를 anomalous attention map으로 사용하였다. localization 또한 threshold를 0.5로 설정하여 performance를 측정하였다.
 
 
 <center>
@@ -72,7 +72,7 @@ z로 부터 attention map $A_{test}$ 을 구하고 $(\mathbf{1} - A_{test})$를 
 </center>
 
 
-## Weakly Supervised Approach: $\text{CAVGA}_w$
+## Weakly Supervised Approach: $\text{CAVGA}\_w$
 
 몇몇의 localize label 데이터가 존재할때 classifier와 loss를 추가하여 weakly supervised $\text{CAVGA}$를 만들 수 있다.
 
@@ -80,12 +80,12 @@ Fig. 2. (b)에서 $\text{CAVGA}\_w$ 의 형태를 확인 할 수 있다. latent 
 
 input image x, ground truth label y, 가 주어졌을 때 $p\in \{c\_a, c\}$ 을 $C$의 prediction이라 한다. 여기서 $c\_a, c\_n$ 은 anomalous, normal class를 의미한다.
 
-$x$가 정상 이미지($y = c\_n$)인 경우 $p$ 로부터 Grad-CAM을 통해 비정상, 정상 class에 대한 attention map $A\_x^{c\_a}, A_x^{c\_n}$ 을 구한다. $x$가 정상 이미지이기 때문에 각각 minimize, maximize 해야 한다. 
+$x$가 정상 이미지($y = c\_n$)인 경우 $p$ 로부터 Grad-CAM을 통해 비정상, 정상 class에 대한 attention map $A\_x^{c\_a}, A\_x^{c\_n}$ 을 구한다. $x$가 정상 이미지이기 때문에 각각 minimize, maximize 해야 한다. 
 
 정상으로 분류된 정상이미지에 대해서만 다음과 같이 complementary guided attention loss를 정의 한다.
 
 \begin{equation}
-    L_{c g a, 1}=\frac{\mathbb{1}\left(p=y=c_{n}\right)}{\left|A_{x}^{c_{n}}\right|} \sum_{i, j}\left(1-\left(A_{x}^{c_{n}}\right)_{i, j}+\left(A_{x}^{c_{a}}\right)_{i, j}\right)
+    L\_{c g a, 1}=\frac{\mathbb{1}\left(p=y=c\_{n}\right)}{\left|A\_{x}^{c\_{n}}\right|} \sum\_{i, j}\left(1-\left(A\_{x}^{c\_{n}}\right)\_{i, j}+\left(A\_{x}^{c\_{a}}\right)\_{i, j}\right)
 \end{equation}
 
 
@@ -94,7 +94,7 @@ $L\_{cga}$는 $L\_{cga,1}$을 $N$개의 이미지에 대해 평균한 값이다.
 최종적인 objective function $L\_{final}$은 다음과 같다.
 
 \begin{equation}
-    L_{\text {final}}=w_{r} L+w_{a d v} L_{a d v}+w_{c} L_{b c e}+w_{c g a} L_{c g a}
+    L\_{\text {final}}=w\_{r} L+w\_{a d v} L\_{a d v}+w\_{c} L\_{b c e}+w\_{c g a} L\_{c g a}
 \end{equation}
 
 여기서 $\omega\_r, \omega\_{adv}, \omega\_c, \omega\_{cga}$는 각각 $1, 1, 0.001, 0.01$로 설정하였다.
@@ -137,7 +137,7 @@ Anomaly localization에서는 AuROC, Intersection-over-Union(IoU)을 사용하�
 
 ### Performance on anomaly localization
 
-Table 3에서 MVTAD dataset에 대해 $\text{CAVGA}$와 기타 baseline model들의 category 별 IoU, mean IoU, mean AuROC 성능을 볼 수 있다. 대체적으로 $\text{CAVGA}$ 모델이 더 나은 성능을 보임을 확인 할 수 있으며 특히 $\text{CAVGA-R}_w$ 모델이 가장 높은 성능을 보였다.
+Table 3에서 MVTAD dataset에 대해 $\text{CAVGA}$와 기타 baseline model들의 category 별 IoU, mean IoU, mean AuROC 성능을 볼 수 있다. 대체적으로 $\text{CAVGA}$ 모델이 더 나은 성능을 보임을 확인 할 수 있으며 특히 $\text{CAVGA-R}\_w$ 모델이 가장 높은 성능을 보였다.
 
 mSTC dataset에 대한 localization 결과는 Table 4에서 확인 할 수 있다.
 
@@ -181,7 +181,7 @@ MVTAD, LAG dataset 에 대한 anomaly detection 결과를 각각 Table 6, Table 
 
 # Ablation Study
 
-Table 8에서 latent variable $z$, expansion loss $L_{ae}$, $L_{cga}$에 대한 ablation test 결과를 볼 수 있다. Method 이름 뒤에 *가 붙은 경우는 1-d(flattened) latent variable $z$ 를 사용했음을 의미한다.
+Table 8에서 latent variable $z$, expansion loss $L\_{ae}$, $L\_{cga}$에 대한 ablation test 결과를 볼 수 있다. Method 이름 뒤에 *가 붙은 경우는 1-d(flattened) latent variable $z$ 를 사용했음을 의미한다.
 
 <center>
 <figure>
