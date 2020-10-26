@@ -39,7 +39,7 @@ Defect에 대한 정보를 사전에 알 수 없는 Unsupervised learning을 가
 \end{equation}
 
 
-여기서 $|A|$는 전체 요소의 갯수이며(feature size), $A\_{i,j}$는 $A$의 $(i, j)$ 위치의 요소이며, $A\_{i,j}\in [0,1]$ 이다. 최종적으로는 $N$ 개의 이미지에 대한 평균을 사용한다.
+여기서 $\|A\|$는 전체 요소의 갯수이며(feature size), $A\_{i,j}$는 $A$의 $(i, j)$ 위치의 요소이며, $A\_{i,j}\in [0,1]$ 이다. 최종적으로는 $N$ 개의 이미지에 대한 평균을 사용한다.
 
 Attention expansion loss를 추가함으로 해서 attention map이 전체 이미지에 집중하도록 유도하였고  Fig. 1에서 효과를 확인 할 수 있다.
 
