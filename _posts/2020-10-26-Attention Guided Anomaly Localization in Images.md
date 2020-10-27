@@ -4,7 +4,7 @@ title: "Paper Summary"
 use_math: true
 ---
 
-# Attention Guided Anomaly Localization in Images
+# Attention Guided Anomaly Localization in Images - ECCV' 20
 
 *Shashanka Venkataramanan, Kuan-Chuan Peng, Rajat Vikram Singh, Abhijit Mahalanobis*
 
