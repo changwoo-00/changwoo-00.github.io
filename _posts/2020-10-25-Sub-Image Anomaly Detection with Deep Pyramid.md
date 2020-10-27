@@ -52,7 +52,7 @@ distance는 image(feature)-level Euclidean metric을 사용하였다.
 
 image 가 비정상인지 판정하고 난 이후에 해야 할 일은 정확히 어느 부분이 비정상인지 (pixel 단위에서) 찾는 일이다. (localization, segmentation)
 
-image 단위의 계산과 유사하다. 다만 여기서는 $K$ nearest neighbor image 각각의 pixel $p \in P$에 대한 feature gallery $G = \\{F(x\_{1}, p) \mid p \in P \\}\cup\\{F(x\_{2}, p) \mid p \in P \\}.. \cup \\{F(x\_{K}, p) \mid p \in P \\}$를 만들고 여기서 target pixel의 feature $F(y,p)$에 대한 $\kappa$개의 nearest features를 추출하여 average distance를 구한다. 따라서 pixel $p$에서의 anomaly score는 다음과 같다.
+image 단위의 계산과 유사하다. 다만 여기서는 $K$ nearest neighbor image 각각의 pixel $p \in P$에 대한 feature gallery $G = \\{F(x\_{1}, p) \mid p \in P \\}\cup\\{F(x\_{2}, p) \mid p \in P \\}.. \cup \\{F(x\_{K}, p) \mid p \in P \\}$를 만들고 여기서 target pixel의 feature L$F(y,p)$에 대한 $\kappa$개의 nearest features를 추출하여 average distance를 구한다. 따라서 pixel $p$에서의 anomaly score는 다음과 같다.
 
 \begin{equation}
 	d(y, p)=\frac{1}{\kappa} \sum_{f \in N_{\kappa}(F(y, p))}\|f-F(y, p)\|^{2}
