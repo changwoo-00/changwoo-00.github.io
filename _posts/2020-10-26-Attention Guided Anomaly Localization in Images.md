@@ -90,14 +90,13 @@ $x$가 정상 이미지($y = c\_n$)인 경우 $p$ 로부터 Grad-CAM을 통해 �
     L\_{c g a, 1}=\frac{\mathbb{1}\left(p=y=c\_{n}\right)}{\left|A\_{x}^{c\_{n}}\right|} \sum\_{i, j}\left(1-\left(A\_{x}^{c\_{n}}\right)\_{i, j}+\left(A\_{x}^{c\_{a}}\right)\_{i, j}\right)
 \end{equation}
 
-
-$L\_{cga}$는 $L\_{cga,1}$을 $N$개의 이미지에 대해 평균한 값이다. 
-
 최종적인 objective function $L\_{final}$은 다음과 같다.
 
 \begin{equation}
     L\_{\text {final}}=w\_{r} L+w\_{a d v} L\_{a d v}+w\_{c} L\_{b c e}+w\_{c g a} L\_{c g a}
 \end{equation}
+
+$L\_{cga}$는 $L\_{cga,1}$을 $N$개의 이미지에 대해 평균한 값이다. 
 
 여기서 $\omega\_r, \omega\_{adv}, \omega\_c, \omega\_{cga}$는 각각 $1, 1, 0.001, 0.01$로 설정하였다.
 
@@ -123,11 +122,9 @@ AVID, AE_L2, AE_SSIM, AnoGAN, CNN feature dictionary, texture inspection(TI), ga
 
 ### Architecture details
 
-encoder로 ImageNet dataset으로 pre-trained 된 ResNet-18을 finetuning 하여 사용하였다. [9]를 참고 및 수정하여 residual decoder로 사용하였다. 이 모델을 $\text{CAVGA-R}$이라 부른다. 
+encoder로 ImageNet dataset으로 pre-trained 된 ResNet-18을 finetuning 하여 사용하였다. [9]를 참고 및 수정하여 decoder로 사용하였고, discriminator는 Celeb-A로 pre-trained된 DC-GAN을 사용하였다. 이 모델을 $\text{CAVGA-R}$이라 부른다. 
 
-한편, based line과 Architecture에 대한 공정한 비교를 위해 Celeb-A로 pre-trained 된 DC-GAN의 discriminator와 generator를 각각 encoder와 decoder로 사용였고, 이를 $\text{CAVGA-D}$라 부른다. 
-
-discriminator는 두 모델 모두 Celeb-A로 pre-trained된 DC-GAN을 사용하였다.
+한편, based line과 Architecture에 대한 공정한 비교를 위해 Celeb-A로 pre-trained 된 DC-GAN의 discriminator와 generator를 각각 encoder와 decoder로 사용였고, discriminator는 마찬가지로 Celeb-A로 pre-trained된 DC-GAN을 사용하였다. 이를 $\text{CAVGA-D}$라 부른다. 
 
 unsupervised, weakly supervised 에 따라 각각 $u$, $w$의 아래 첨자가 붙는다.
 
