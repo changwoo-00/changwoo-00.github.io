@@ -26,21 +26,21 @@ Anomaly size가 다양하므로 추가적으로 Hierarchical encoding 방법을 
 DeepSVDD → patchwise loss
 
 \begin{equation}
-    \mathcal{L}_{\mathrm{SVDD\text{'}}}=\sum_{i . i^{\prime}}\left\|f_{\theta}\left(\mathbf{p}_{i}\right)-f_{\theta}\left(\mathbf{p}_{i^{\prime}}\right)\right\|_{2}
+    \mathcal{L}\_{\mathrm{SVDD\text{'}}}=\sum\_{i . i^{\prime}}\left\|f\_{\theta}\left(\mathbf{p}\_{i}\right)-f\_{\theta}\left(\mathbf{p}\_{i^{\prime}}\right)\right\|\_{2}
 \end{equation}
 
 
 self-supervised learning loss
 
 \begin{equation}
-    \mathcal{L}_{\mathrm{SSL}}=\text { Cross-entropy }\left(y, C_{\phi}\left(f_{\theta}\left(\mathbf{p}_{1}\right), f_{\theta}\left(\mathbf{p}_{2}\right)\right)\right)
+    \mathcal{L}\_{\mathrm{SSL}}=\text { Cross-entropy }\left(y, C\_{\phi}\left(f\_{\theta}\left(\mathbf{p}\_{1}\right), f\_{\theta}\left(\mathbf{p}\_{2}\right)\right)\right)
 \end{equation}
 
 
 Total loss
 
 \begin{equation}
-    \mathcal{L}_{\mathrm{Patch} \mathrm{SVDD}}=\lambda \mathcal{L}_{\mathrm{SVDD}\text{'}}+\mathcal{L}_{\mathrm{SSL}}
+    \mathcal{L}\_{\mathrm{Patch} \mathrm{SVDD}}=\lambda \mathcal{L}\_{\mathrm{SVDD}\text{'}}+\mathcal{L}\_{\mathrm{SSL}}
 \end{equation}
 
 
