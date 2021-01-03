@@ -59,7 +59,7 @@ Inference (Anomaly map 생성)
 <center>
     <figure>
         <img src="/assets/2021-01-03-Patch SVDD Patch-level SVDD for Anomaly Detection/Untitled%201.png" alt="Untitled" style="width:80%">
-        <figcaption>Fig. 1</figcaption>
+        <figcaption>Fig. 2</figcaption>
     </figure>
 </center>
 
