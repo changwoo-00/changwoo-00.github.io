@@ -22,6 +22,7 @@ image: /thumbnail-jumbo.png
 
 plugins:
   - jekyll-target-blank
+  - jekyll-sitemap
 
 target-blank:
     rel: nofollow
