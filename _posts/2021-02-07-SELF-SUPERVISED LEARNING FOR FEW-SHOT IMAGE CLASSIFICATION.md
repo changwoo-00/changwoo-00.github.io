@@ -51,9 +51,6 @@ AMDIM의 핵심 concept는 두 view $(x\_a, x\_b)$ 사이의 global feature와 l
 	\mathcal{L}\_{amdim}(f\_{g}(x\_{a}), f\_{5}(x\_{b})) = -\log \frac{\exp \{\phi(f\_{g}(x\_{a}), f\_{5}(x\_{b}))\}}{\sum_{\widetilde{x\_{b}} \in \mathcal{N}\_{x} \cup x\_{b}} \exp \{\phi(f\_{g}(x\_{a}), f\_{5}(\widetilde{x\_{b}}))\}}
 \end{equation}
 
-\begin{equation}
-	\mathcal{L}\_\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right) = -\log \frac{\exp \left{\phi\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)\right}}{\sum\_{\widetilde{x\_{b}} \in \mathcal{N}\_{x} \cup x\_{b}} \exp \left{\phi\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(\widetilde{x\_{b}}\right)\right)\right}}
-\end{equation}
 
 $\mathcal{N}\_x$는 $x$의 negative sample이며 $\phi$는 distance metric function이다.
 
