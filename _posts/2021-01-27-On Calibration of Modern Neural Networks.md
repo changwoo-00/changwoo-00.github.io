@@ -151,11 +151,25 @@ $T$ is optimized with respect to NLL on the validation set.
 
 ### Calibration Results
 
-![On%20Calibration%20of%20Modern%20Neural%20Networks%208398f8ee2acb4b8d8c16753c977d444d/Untitled%202.png](On%20Calibration%20of%20Modern%20Neural%20Networks%208398f8ee2acb4b8d8c16753c977d444d/Untitled%202.png)
+<center>
+    <figure>
+        <img src="D:\Experimental\githubio\hcw-00.github.io\assets\2021-01-27-On Calibration of Modern Neural Networks/Untitled202.png" alt="Untitled" style="width:80%">
+        <figcaption>Fig. 3</figcaption>
+    </figure>
+</center>
+
+<!-- ![On%20Calibration%20of%20Modern%20Neural%20Networks%208398f8ee2acb4b8d8c16753c977d444d/Untitled%202.png](On%20Calibration%20of%20Modern%20Neural%20Networks%208398f8ee2acb4b8d8c16753c977d444d/Untitled%202.png) -->
 
 ### Reliability diagrams
 
-![On%20Calibration%20of%20Modern%20Neural%20Networks%208398f8ee2acb4b8d8c16753c977d444d/Untitled%203.png](On%20Calibration%20of%20Modern%20Neural%20Networks%208398f8ee2acb4b8d8c16753c977d444d/Untitled%203.png)
+<center>
+    <figure>
+        <img src="D:\Experimental\githubio\hcw-00.github.io\assets\2021-01-27-On Calibration of Modern Neural Networks/Untitled203.png" alt="Untitled" style="width:80%">
+        <figcaption>Fig. 4</figcaption>
+    </figure>
+</center>
+
+<!-- ![On%20Calibration%20of%20Modern%20Neural%20Networks%208398f8ee2acb4b8d8c16753c977d444d/Untitled%203.png](On%20Calibration%20of%20Modern%20Neural%20Networks%208398f8ee2acb4b8d8c16753c977d444d/Untitled%203.png) -->
 
 ### Computation time
 
