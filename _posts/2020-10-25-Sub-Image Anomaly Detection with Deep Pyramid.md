@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paper Summary"
+title: "Sub-Image Anomaly Detection with Deep Pyramid Correspondences"
 use_math: true
 ---
 

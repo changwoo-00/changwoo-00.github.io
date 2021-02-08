@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paper Summary"
+title: "On Calibration of Modern Neural Networks"
 use_math: true
 ---
 # On Calibration of Modern Neural Networks

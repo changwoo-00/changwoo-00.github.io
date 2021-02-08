@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paper Summary"
+title: "Adversarial Discriminative Attention for Robust Anomaly Detection"
 use_math: true
 ---
 

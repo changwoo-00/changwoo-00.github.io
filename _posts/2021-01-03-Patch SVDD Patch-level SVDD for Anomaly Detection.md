@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paper Summary"
+title: "Patch SVDD: Patch-level SVDD for Anomaly Detection and Segmentation"
 use_math: true
 ---
 # Patch SVDD: Patch-level SVDD for Anomaly Detection and Segmentation | ACCV' 20

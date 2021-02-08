@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paper Summary"
+title: "Same Same But DifferNet: Semi-Supervised Defect Detection with Normalizing Flows"
 use_math: true
 ---
 

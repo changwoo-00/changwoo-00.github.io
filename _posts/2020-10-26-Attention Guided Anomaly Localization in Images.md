@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paper Summary"
+title: "Attention Guided Anomaly Localization in Images"
 use_math: true
 ---
 

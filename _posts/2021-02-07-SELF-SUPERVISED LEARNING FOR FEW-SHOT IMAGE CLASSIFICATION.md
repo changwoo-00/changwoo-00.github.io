@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paper Summary"
+title: "Self-supervised learning for few-shot image classification"
 use_math: true
 ---
 # SELF-SUPERVISED LEARNING FOR FEW-SHOT IMAGE CLASSIFICATION

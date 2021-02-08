@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paper Summary"
+title: "PaDiM: a Patch Distribution Modeling Framework for Anomaly Detection and Localization"
 use_math: true
 ---
 # PaDiM: a Patch Distribution Modeling Framework for Anomaly Detection and Localization | arXiv' Nov.2020
