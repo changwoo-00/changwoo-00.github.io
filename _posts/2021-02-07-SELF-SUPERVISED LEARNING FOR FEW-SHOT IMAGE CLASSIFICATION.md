@@ -32,7 +32,7 @@ pretext task는 context로부터 뽑힌 여러 feature들 간의 mutual informat
 
 joint와 marginal의 곱 사이의 KullbackLeibler (KL) divergence로 정의된 mutual information(MI)은 random variable X와 Y 사이의 shared information을 측정한다.
 \begin{equation}
-	I(X, Y) &=D_{K L}(p(x, y) \| p(x) p(y)) \\&=\sum \sum p(x, y) \log \frac{p(x \mid y)}{p(x)}
+	I(X, Y) =D_{K L}(p(x, y) \| p(x) p(y)) \\=\sum \sum p(x, y) \log \frac{p(x \mid y)}{p(x)}
 \end{equation}
 
 우리는 단지 sample을 가지고 있고 직접적으로 underlying distribution에 접근할 수 없으므로 MI를 추정하는 일은 어려운 일이다.
@@ -46,9 +46,9 @@ AMDIM의 핵심 concept는 두 view $(x_a, x_b)$ 사이의 global feature와 loc
 여기서 $f_g$는 global feature, $f_5$는 encoder의 $5\times5$ local feature map, $f_7$은 encoder의 $7\times7$  feature map이다.
 
 예를 들어, $f_g(x_a)$와 $f_5(x_b)$사이의 NCE loss는 다음과 같다.
-
+	
 \begin{equation}
-	\mathcal{L}_{{amdim }}\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right) = \\ -\log \frac{\exp \left\{\phi\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right)\right\}}{\sum_{\widetilde{x_{b}} \in \mathcal{N}_{x} \cup x_{b}} \exp \left\{\phi\left(f_{g}\left(x_{a}\right), f_{5}\left(\widetilde{x_{b}}\right)\right)\right\}}
+	\mathcal{L}\_{{amdim }}\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right) = \\ -\log \frac{\exp \left\{\phi\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right)\right\}}{\sum_{\widetilde{x_{b}} \in \mathcal{N}_{x} \cup x_{b}} \exp \left\{\phi\left(f_{g}\left(x_{a}\right), f_{5}\left(\widetilde{x_{b}}\right)\right)\right\}}
 \end{equation}
 
 
@@ -57,7 +57,7 @@ $\mathcal{N}_x$는 $x$의 negative sample이며 $\phi$는 distance metric functi
 $x_a$와 $x_b$ 사이의 overall loss는 다음과 같다.
 
 \begin{equation}
-	{c}\mathcal{L}_{{amdim}}\left(x_{a}, x_{b}\right)=\mathcal{L}_{ {amdim }}\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right)+ \\\mathcal{L}_{{amdim }}\left(f_{g}\left(x_{a}\right), f_{7}\left(x_{b}\right)\right)+\mathcal{L}_{{amdim }}\left(f_{5}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right)
+	\mathcal{L}_{{amdim}}\left(x_{a}, x_{b}\right)=\mathcal{L}_{ {amdim }}\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right)+ \\\mathcal{L}_{{amdim }}\left(f_{g}\left(x_{a}\right), f_{7}\left(x_{b}\right)\right)+\mathcal{L}_{{amdim }}\left(f_{5}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right)
 \end{equation}
 
 
@@ -84,7 +84,7 @@ class k에 대해서 training sample들의 embedding feature의 centroid는 다�
 query sample q에 대해 모든 class에 대한 distribution을 다음과 같이 얻는다.
 
 \begin{equation}
-	$$p(y=k \mid q)=\frac{\exp \left(-d\left(f_{g}(q), c_{k}\right)\right)}{\sum_{k^{\prime}} \exp \left(-d\left(f_{g}(q), c_{k^{\prime}}\right)\right)}$$
+	p(y=k \mid q)=\frac{\exp \left(-d\left(f_{g}(q), c_{k}\right)\right)}{\sum_{k^{\prime}} \exp \left(-d\left(f_{g}(q), c_{k^{\prime}}\right)\right)}
 \end{equation}
 
 
@@ -93,7 +93,7 @@ query sample q에 대해 모든 class에 대한 distribution을 다음과 같이
 식에서 확인 할 수 있듯이 distribution은 sample의 embedding과 class의 reconstructed features 사이의 distance에 대한 softmax로 표현된다. meta learning stage에서 loss는 다음과 같다.
 
 \begin{equation}
-	$$\mathcal{L}_{{meta}}=d\left(f_{g}(q), c_{k}\right)+\log \sum_{k^{\prime}} d\left(f_{g}(q), c_{k^{\prime}}\right)$$
+	\mathcal{L}_{{meta}}=d\left(f_{g}(q), c_{k}\right)+\log \sum_{k^{\prime}} d\left(f_{g}(q), c_{k^{\prime}}\right)
 \end{equation}
 
 ## Experimental results
