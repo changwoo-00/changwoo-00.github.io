@@ -45,14 +45,14 @@ AMDIM의 핵심 concept는 두 view $(x\_a, x\_b)$ 사이의 global feature와 l
 
 여기서 $f\_g$는 global feature, $f\_5$는 encoder의 $5\times5$ local feature map, $f\_7$은 encoder의 $7\times7$  feature map이다.
 
-예를 들어, $f_g(x_a)$와 $f_5(x_b)$사이의 NCE loss는 다음과 같다.
+예를 들어, $f\_g(x\_a)$와 $f\_5(x\_b)$사이의 NCE loss는 다음과 같다.
 	
 \begin{equation}
 	\mathcal{L}\_{{amdim }}(f\_{g}(x\_{a}\right), f\_{5}(x\_{b}\right)\right) = -\log \frac{\exp \left\{\phi\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)\right\}}{\sum_{\widetilde{x\_{b}} \in \mathcal{N}\_{x} \cup x\_{b}} \exp \left\{\phi\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(\widetilde{x\_{b}}\right)\right)\right\}}
 \end{equation}
 
 \begin{equation}
-	\mathcal{L}_\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right) = -\log \frac{\exp \left{\phi\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right)\right}}{\sum_{\widetilde{x_{b}} \in \mathcal{N}_{x} \cup x_{b}} \exp \left{\phi\left(f_{g}\left(x_{a}\right), f_{5}\left(\widetilde{x_{b}}\right)\right)\right}}
+	\mathcal{L}\_\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right) = -\log \frac{\exp \left{\phi\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)\right}}{\sum\_{\widetilde{x\_{b}} \in \mathcal{N}\_{x} \cup x\_{b}} \exp \left{\phi\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(\widetilde{x\_{b}}\right)\right)\right}}
 \end{equation}
 
 $\mathcal{N}\_x$는 $x$의 negative sample이며 $\phi$는 distance metric function이다.
