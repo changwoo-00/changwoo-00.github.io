@@ -48,7 +48,7 @@ AMDIM의 핵심 concept는 두 view $(x\_a, x\_b)$ 사이의 global feature와 l
 예를 들어, $f\_g(x\_a)$와 $f\_5(x\_b)$사이의 NCE loss는 다음과 같다.
 	
 \begin{equation}
-	\mathcal{L}\_{amdim}(f\_{g}(x\_{a}), f\_{5}(x\_{b})) = -\log \frac{\exp \{\phi(f\_{g}(x\_{a}), f\_{5}(x\_{b}))\}}{\sum_{\widetilde{x\_{b}} \in \mathcal{N}\_{x} \cup x\_{b}} \exp \{\phi(f\_{g}(x\_{a}), f\_{5}(\widetilde{x\_{b}}))\}}
+	\mathcal{L}\_{amdim}(f\_{g}(x\_{a}), f\_{5}(x\_{b})) = -\log \frac{\exp \phi(f\_{g}(x\_{a}), f\_{5}(x\_{b})))}{\sum_{\widetilde{x\_{b}} \in \mathcal{N}\_{x} \cup x\_{b}} \exp (\phi(f\_{g}(x\_{a}), f\_{5}(\widetilde{x\_{b}})))}
 \end{equation}
 
 
