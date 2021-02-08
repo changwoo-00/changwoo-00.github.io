@@ -32,7 +32,7 @@ pretext task는 context로부터 뽑힌 여러 feature들 간의 mutual informat
 
 joint와 marginal의 곱 사이의 KullbackLeibler (KL) divergence로 정의된 mutual information(MI)은 random variable X와 Y 사이의 shared information을 측정한다.
 \begin{equation}
-	I(X, Y) =D\_{K L}(p(x, y) \| p(x) p(y)) \\=\sum \sum p(x, y) \log \frac{p(x \mid y)}{p(x)}
+	I(X, Y) =D\_{K L}(p(x, y) \| p(x) p(y)) =\sum \sum p(x, y) \log \frac{p(x \mid y)}{p(x)}
 \end{equation}
 
 우리는 단지 sample을 가지고 있고 직접적으로 underlying distribution에 접근할 수 없으므로 MI를 추정하는 일은 어려운 일이다.
@@ -48,7 +48,7 @@ AMDIM의 핵심 concept는 두 view $(x_a, x_b)$ 사이의 global feature와 loc
 예를 들어, $f_g(x_a)$와 $f_5(x_b)$사이의 NCE loss는 다음과 같다.
 	
 \begin{equation}
-	\mathcal{L}\_{{amdim }}\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right) = \\ -\log \frac{\exp \left\{\phi\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)\right\}}{\sum_{\widetilde{x\_{b}} \in \mathcal{N}\_{x} \cup x\_{b}} \exp \left\{\phi\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(\widetilde{x\_{b}}\right)\right)\right\}}
+	\mathcal{L}\_{{amdim }}\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right) = -\log \frac{\exp \left\{\phi\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)\right\}}{\sum_{\widetilde{x\_{b}} \in \mathcal{N}\_{x} \cup x\_{b}} \exp \left\{\phi\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(\widetilde{x\_{b}}\right)\right)\right\}}
 \end{equation}
 
 
@@ -57,7 +57,7 @@ $\mathcal{N}_x$는 $x$의 negative sample이며 $\phi$는 distance metric functi
 $x_a$와 $x_b$ 사이의 overall loss는 다음과 같다.
 
 \begin{equation}
-	\mathcal{L}\_{{amdim}}\left(x\_{a}, x\_{b}\right)=\mathcal{L}\_{ {amdim }}\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)+ \\\mathcal{L}\_{{amdim }}\left(f\_{g}\left(x\_{a}\right), f\_{7}\left(x\_{b}\right)\right)+\mathcal{L}\_{{amdim }}\left(f\_{5}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)
+	\mathcal{L}\_{{amdim}}\left(x\_{a}, x\_{b}\right)=\mathcal{L}\_{ {amdim }}\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)+ \mathcal{L}\_{{amdim }}\left(f\_{g}\left(x\_{a}\right), f\_{7}\left(x\_{b}\right)\right)+\mathcal{L}\_{{amdim }}\left(f\_{5}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)
 \end{equation}
 
 
