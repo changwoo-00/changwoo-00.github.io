@@ -78,13 +78,13 @@ Snell et. al. 과 같은 최근의 인기있는 framework는 모든 input sample
 class k에 대해서 training sample들의 embedding feature의 centroid는 다음과 같이 얻을 수 있다.
 
 \begin{equation}
-	c_{k}=\frac{1}{|S|} \sum_{\left(x_{i}, y_{i}\right) \in S} f_{g}\left(x_{i}\right)
+	c\_{k}=\frac{1}{|S|} \sum\_{\left(x\_{i}, y\_{i}\right) \in S} f\_{g}\left(x\_{i}\right)
 \end{equation}
 
 query sample q에 대해 모든 class에 대한 distribution을 다음과 같이 얻는다.
 
 \begin{equation}
-	p(y=k \mid q)=\frac{\exp \left(-d\left(f_{g}(q), c_{k}\right)\right)}{\sum_{k^{\prime}} \exp \left(-d\left(f_{g}(q), c_{k^{\prime}}\right)\right)}
+	p(y=k \mid q)=\frac{\exp \left(-d\left(f\_{g}(q), c\_{k}\right)\right)}{\sum\_{k^{\prime}} \exp \left(-d\left(f\_{g}(q), c\_{k^{\prime}}\right)\right)}
 \end{equation}
 
 
@@ -93,7 +93,7 @@ query sample q에 대해 모든 class에 대한 distribution을 다음과 같이
 식에서 확인 할 수 있듯이 distribution은 sample의 embedding과 class의 reconstructed features 사이의 distance에 대한 softmax로 표현된다. meta learning stage에서 loss는 다음과 같다.
 
 \begin{equation}
-	\mathcal{L}_{{meta}}=d\left(f_{g}(q), c_{k}\right)+\log \sum_{k^{\prime}} d\left(f_{g}(q), c_{k^{\prime}}\right)
+	\mathcal{L}\_{{meta}}=d\left(f\_{g}(q), c\_{k}\right)+\log \sum\_{k^{\prime}} d\left(f\_{g}(q), c\_{k^{\prime}}\right)
 \end{equation}
 
 ## Experimental results
