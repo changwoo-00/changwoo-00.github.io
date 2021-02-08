@@ -14,7 +14,7 @@ use_math: true
 
 <center>
     <figure>
-        <img src="D:/githubio/clone/hcw-00.github.io/assets/2021-02-07-SELF-SUPERVISED LEARNING FOR FEW-SHOT IMAGE CLASSIFICATION/Untitled.png" alt="Untitled" style="width:80%">
+        <img src="/assets/2021-02-07-SELF-SUPERVISED LEARNING FOR FEW-SHOT IMAGE CLASSIFICATION/Untitled.png" alt="Untitled" style="width:80%">
         <figcaption>Fig. 1</figcaption>
     </figure>
 </center>
@@ -31,8 +31,9 @@ few-shot learning classification 문제의 한가지 인기있는 해결책은 p
 pretext task는 context로부터 뽑힌 여러 feature들 간의 mutual information을 최대화 하도록 설계되었다.
 
 joint와 marginal의 곱 사이의 KullbackLeibler (KL) divergence로 정의된 mutual information(MI)은 random variable X와 Y 사이의 shared information을 측정한다.
-
-$$\begin{aligned}I(X, Y) &=D_{K L}(p(x, y) \| p(x) p(y)) \\&=\sum \sum p(x, y) \log \frac{p(x \mid y)}{p(x)}\end{aligned}$$
+\begin{equation}
+	I(X, Y) &=D_{K L}(p(x, y) \| p(x) p(y)) \\&=\sum \sum p(x, y) \log \frac{p(x \mid y)}{p(x)}
+\end{equation}
 
 우리는 단지 sample을 가지고 있고 직접적으로 underlying distribution에 접근할 수 없으므로 MI를 추정하는 일은 어려운 일이다.
 
@@ -46,14 +47,19 @@ AMDIM의 핵심 concept는 두 view $(x_a, x_b)$ 사이의 global feature와 loc
 
 예를 들어, $f_g(x_a)$와 $f_5(x_b)$사이의 NCE loss는 다음과 같다.
 
-$$\mathcal{L}_{{amdim }}\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right) = \\ -\log \frac{\exp \left\{\phi\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right)\right\}}{\sum_{\widetilde{x_{b}} \in \mathcal{N}_{x} \cup x_{b}} \exp \left\{\phi\left(f_{g}\left(x_{a}\right), f_{5}\left(\widetilde{x_{b}}\right)\right)\right\}}
-$$
+\begin{equation}
+	\mathcal{L}_{{amdim }}\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right) = \\ -\log \frac{\exp \left\{\phi\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right)\right\}}{\sum_{\widetilde{x_{b}} \in \mathcal{N}_{x} \cup x_{b}} \exp \left\{\phi\left(f_{g}\left(x_{a}\right), f_{5}\left(\widetilde{x_{b}}\right)\right)\right\}}
+\end{equation}
+
 
 $\mathcal{N}_x$는 $x$의 negative sample이며 $\phi$는 distance metric function이다.
 
 $x_a$와 $x_b$ 사이의 overall loss는 다음과 같다.
 
-$$\begin{array}{c}\mathcal{L}_{{amdim}}\left(x_{a}, x_{b}\right)=\mathcal{L}_{ {amdim }}\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right)+ \\\mathcal{L}_{{amdim }}\left(f_{g}\left(x_{a}\right), f_{7}\left(x_{b}\right)\right)+\mathcal{L}_{{amdim }}\left(f_{5}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right)\end{array}$$
+\begin{equation}
+	{c}\mathcal{L}_{{amdim}}\left(x_{a}, x_{b}\right)=\mathcal{L}_{ {amdim }}\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right)+ \\\mathcal{L}_{{amdim }}\left(f_{g}\left(x_{a}\right), f_{7}\left(x_{b}\right)\right)+\mathcal{L}_{{amdim }}\left(f_{5}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right)
+\end{equation}
+
 
 ### 3.2. Meta-learning stage
 
@@ -71,11 +77,16 @@ Snell et. al. 과 같은 최근의 인기있는 framework는 모든 input sample
 
 class k에 대해서 training sample들의 embedding feature의 centroid는 다음과 같이 얻을 수 있다.
 
-$$c_{k}=\frac{1}{|S|} \sum_{\left(x_{i}, y_{i}\right) \in S} f_{g}\left(x_{i}\right)$$
+\begin{equation}
+	c_{k}=\frac{1}{|S|} \sum_{\left(x_{i}, y_{i}\right) \in S} f_{g}\left(x_{i}\right)
+\end{equation}
 
 query sample q에 대해 모든 class에 대한 distribution을 다음과 같이 얻는다.
 
-$$p(y=k \mid q)=\frac{\exp \left(-d\left(f_{g}(q), c_{k}\right)\right)}{\sum_{k^{\prime}} \exp \left(-d\left(f_{g}(q), c_{k^{\prime}}\right)\right)}$$
+\begin{equation}
+	$$p(y=k \mid q)=\frac{\exp \left(-d\left(f_{g}(q), c_{k}\right)\right)}{\sum_{k^{\prime}} \exp \left(-d\left(f_{g}(q), c_{k^{\prime}}\right)\right)}$$
+\end{equation}
+
 
 우리는 distance function d로 Euclidean distance를 채택하였다.
 
@@ -97,14 +108,14 @@ Caltech-UCSD Birds-200-2011(CUB-200-2011) dataset. a dataset for fine-grained cl
 
 <center>
     <figure>
-        <img src="D:/githubio/clone/hcw-00.github.io/assets/2021-02-07-SELF-SUPERVISED LEARNING FOR FEW-SHOT IMAGE CLASSIFICATION/Untitled%201.png" alt="Untitled" style="width:80%">
+        <img src="/assets/2021-02-07-SELF-SUPERVISED LEARNING FOR FEW-SHOT IMAGE CLASSIFICATION/Untitled%201.png" alt="Untitled" style="width:80%">
         <figcaption>Fig. 1</figcaption>
     </figure>
 </center>
 
 <center>
     <figure>
-        <img src="D:/githubio/clone/hcw-00.github.io/assets/2021-02-07-SELF-SUPERVISED LEARNING FOR FEW-SHOT IMAGE CLASSIFICATION/Untitled%202.png" alt="Untitled" style="width:80%">
+        <img src="/assets/2021-02-07-SELF-SUPERVISED LEARNING FOR FEW-SHOT IMAGE CLASSIFICATION/Untitled%202.png" alt="Untitled" style="width:80%">
         <figcaption>Fig. 1</figcaption>
     </figure>
 </center>
