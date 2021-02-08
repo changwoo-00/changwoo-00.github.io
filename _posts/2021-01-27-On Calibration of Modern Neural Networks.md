@@ -53,9 +53,9 @@ the interval** $I_{m}=\left(\frac{m-1}{M}, \frac{m}{M}\right]$.  The accuracy of
 
 $$\operatorname{acc}\left(B_{m}\right)=\frac{1}{\left|B_{m}\right|} \sum_{i \in B_{m}} \mathbf{1}\left(\hat{y}_{i}=y_{i}\right)$$
 
-where $\hat{y}_i$ and $y_i$ are the predicted and true class labels for sample $i$.  
+where $\hat{y}_i$ and $y_i$ are the predicted and true class labels for sample $i$. 
 
-Basic probability tells us that $\text{acc}(B_m)$ is an unbiased and consistent estimator of $\mathbb{P}(\hat{Y} = Y | \hat{P} \in I_m)$.
+Basic probability tells us that $\text{acc}(B_m)$ is an unbiased and consistent estimator of $\mathbb{P}(\hat{Y} = Y \| \hat{P} \in I_m)$ .
 
 We define the average confidence within bin $B_m$ as 
 
