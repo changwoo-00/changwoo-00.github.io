@@ -105,7 +105,7 @@ $$\mathcal{L}=-\sum_{i=1}^{n} \log \left(\hat{\pi}\left(y_{i} \mid \mathbf{x}_{i
 
 <center>
     <figure>
-        <img src="\assets\2021-01-27-On Calibration of Modern Neural Networks/Untitled201.png" alt="Untitled" style="width:80%">
+        <img src="\assets\2021-01-27-On Calibration of Modern Neural Networks/Untitled%201.png" alt="Untitled" style="width:80%">
         <figcaption>Fig. 2</figcaption>
     </figure>
 </center>
@@ -153,7 +153,7 @@ $T$ is optimized with respect to NLL on the validation set.
 
 <center>
     <figure>
-        <img src="\assets\2021-01-27-On Calibration of Modern Neural Networks/Untitled202.png" alt="Untitled" style="width:80%">
+        <img src="\assets\2021-01-27-On Calibration of Modern Neural Networks/Untitled%202.png" alt="Untitled" style="width:80%">
         <figcaption>Fig. 3</figcaption>
     </figure>
 </center>
@@ -164,7 +164,7 @@ $T$ is optimized with respect to NLL on the validation set.
 
 <center>
     <figure>
-        <img src="\assets\2021-01-27-On Calibration of Modern Neural Networks/Untitled203.png" alt="Untitled" style="width:80%">
+        <img src="\assets\2021-01-27-On Calibration of Modern Neural Networks/Untitled%203.png" alt="Untitled" style="width:80%">
         <figcaption>Fig. 4</figcaption>
     </figure>
 </center>
