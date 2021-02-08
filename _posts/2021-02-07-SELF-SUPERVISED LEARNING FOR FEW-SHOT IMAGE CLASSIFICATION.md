@@ -92,7 +92,9 @@ query sample q에 대해 모든 class에 대한 distribution을 다음과 같이
 
 식에서 확인 할 수 있듯이 distribution은 sample의 embedding과 class의 reconstructed features 사이의 distance에 대한 softmax로 표현된다. meta learning stage에서 loss는 다음과 같다.
 
-$$\mathcal{L}_{{meta}}=d\left(f_{g}(q), c_{k}\right)+\log \sum_{k^{\prime}} d\left(f_{g}(q), c_{k^{\prime}}\right)$$
+\begin{equation}
+	$$\mathcal{L}_{{meta}}=d\left(f_{g}(q), c_{k}\right)+\log \sum_{k^{\prime}} d\left(f_{g}(q), c_{k^{\prime}}\right)$$
+\end{equation}
 
 ## Experimental results
 
