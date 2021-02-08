@@ -52,7 +52,7 @@ AMDIM의 핵심 concept는 두 view $(x\_a, x\_b)$ 사이의 global feature와 l
 \end{equation}
 
 \begin{equation}
-\mathcal{L}_\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right) = -\log \frac{\exp \left{\phi\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right)\right}}{\sum_{\widetilde{x_{b}} \in \mathcal{N}_{x} \cup x_{b}} \exp \left{\phi\left(f_{g}\left(x_{a}\right), f_{5}\left(\widetilde{x_{b}}\right)\right)\right}}
+	\mathcal{L}_\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right) = -\log \frac{\exp \left{\phi\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right)\right}}{\sum_{\widetilde{x_{b}} \in \mathcal{N}_{x} \cup x_{b}} \exp \left{\phi\left(f_{g}\left(x_{a}\right), f_{5}\left(\widetilde{x_{b}}\right)\right)\right}}
 \end{equation}
 
 $\mathcal{N}\_x$는 $x$의 negative sample이며 $\phi$는 distance metric function이다.
@@ -66,11 +66,11 @@ $x\_a$와 $x\_b$ 사이의 overall loss는 다음과 같다.
 
 ### 3.2. Meta-learning stage
 
-K-way C-shot
-D : entire training dataset
-V : class labels
-S : support set, $S = \{(x\_i, y\_i)|i=1,...,m\}$, where $m = C\times K$
-Q : query set, $Q = \{(x\_j,y\_j)|j = 1,...,n\}$
+K-way C-shot  
+D : entire training dataset  
+V : class labels  
+S : support set, $S = \{(x\_i, y\_i)|i=1,...,m\}$, where $m = C\times K$  
+Q : query set, $Q = \{(x\_j,y\_j)|j = 1,...,n\}$  
 
 Snell et. al. 과 같은 최근의 인기있는 framework는 모든 input sample을 mean vector c에 mapping 시킬 수 있는 embedding function을 학습 시킬 수 있다.
 
