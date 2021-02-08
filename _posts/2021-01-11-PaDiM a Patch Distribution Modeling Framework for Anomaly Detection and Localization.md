@@ -29,7 +29,7 @@ image를 $(i, j) \in[1, W] \times[1, H]$ 의 grid로 분할하여 각 grid에 �
 
 embedding의 크기를 줄이기 위해 PCA를 사용. 성능을 유지한 상태로 크기를 줄일 수 있음을 확인.
 
-$(i, j)$ 위치의 N개의 학습 데이터셋에 대한 feature embedding $X_{i j}=\lbrace x_{i j}^{k}, k \in [ 1, N ]\rbrace$ 이 가우시안 분포  $\mathcal{N}\left(\mu_{i j}, \mathbf{\Sigma}_{i j}\right)$ 로 부터 생성되었다고 가정한다. ($\mu_{i j}$, $\Sigma_{i j}$ 은 각각 sample mean, sample covariance)
+$(i, j)$ 위치의 N개의 학습 데이터셋에 대한 feature embedding $X_{i j}=\lbrace x_{i j}^{k}, k \in [ 1, N ]\rbrace$ 이 가우시안 분포  $\mathcal{N}(\mu_{i j}, \mathbf{\Sigma}_{i j})$ 로 부터 생성되었다고 가정한다. ($\mu_{i j}$, $\Sigma_{i j}$ 은 각각 sample mean, sample covariance)
 
 $$\Sigma_{i j}=\frac{1}{N-1} \sum_{k=1}^{N}\left(\mathbf{x}_{\mathbf{i j}}^{\mathbf{k}}-\mu_{\mathbf{i j}}\right)\left(\mathbf{x}_{\mathbf{i j}}^{\mathbf{k}}-\mu_{\mathbf{i j}}\right)^{\mathrm{T}}+\boldsymbol{\epsilon} I$$
 
