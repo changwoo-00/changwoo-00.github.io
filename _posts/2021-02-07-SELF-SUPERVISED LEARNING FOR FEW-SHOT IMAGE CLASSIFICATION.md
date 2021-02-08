@@ -32,13 +32,7 @@ pretext task는 context로부터 뽑힌 여러 feature들 간의 mutual informat
 
 joint와 marginal의 곱 사이의 KullbackLeibler (KL) divergence로 정의된 mutual information(MI)은 random variable X와 Y 사이의 shared information을 측정한다.
 
-\begin{equation}
-	I(X, Y) =D\_{K L}(p(x, y) \| p(x) p(y)) =\sum \sum p(x, y) \log \frac{p(x \mid y)}{p(x)}
-\end{equation}
-
-$$I(X, Y) =D_{K L}(p(x, y) \| p(x) p(y)) =\sum \sum p(x, y) \log \frac{p(x \mid y)}{p(x)}$$
-
-\begin{equation} I(X, Y) =D\_{K L}(p(x, y) \| p(x) p(y)) =\sum \sum p(x, y) \log \frac{p(x \mid y)}{p(x)} \end{equation}
+$$I(X, Y) =D_{K L}(p(x, y) | p(x) p(y)) =\sum \sum p(x, y) \log \frac{p(x \mid y)}{p(x)}$$
 
 우리는 단지 sample을 가지고 있고 직접적으로 underlying distribution에 접근할 수 없으므로 MI를 추정하는 일은 어려운 일이다.
 
