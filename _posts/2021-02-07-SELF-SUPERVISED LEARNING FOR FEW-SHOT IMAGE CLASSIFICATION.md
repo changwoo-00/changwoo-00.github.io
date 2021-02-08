@@ -66,7 +66,7 @@ $x\_a$와 $x\_b$ 사이의 overall loss는 다음과 같다.
 K-way C-shot  
 D : entire training dataset  
 V : class labels  
-S : support set, $S = {(x\_i, y\_i)|i=1,...,m}$, where $m = C\times K$  
+S : support set, $S = {{(x\_i, y\_i)|i=1,...,m}}$, where $m = C\times K$  
 Q : query set, $Q = \{(x\_j,y\_j)|j = 1,...,n\}$  
 
 Snell et. al. 과 같은 최근의 인기있는 framework는 모든 input sample을 mean vector c에 mapping 시킬 수 있는 embedding function을 학습 시킬 수 있다.
