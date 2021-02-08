@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Paper Summary"
+use_math: true
+---
 # On Calibration of Modern Neural Networks
 
 Chuan Guo, Geoff Pleiss, Yu Sun, Kilian Q. Weinberger
