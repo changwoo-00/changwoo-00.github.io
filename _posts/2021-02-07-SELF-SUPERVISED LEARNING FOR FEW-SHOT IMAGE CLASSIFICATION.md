@@ -67,7 +67,7 @@ K-way C-shot
 D : entire training dataset  
 V : class labels  
 S : support set, $S = \lbrace(x\_i, y\_i)|i=1,...,m\rbrace$, where $m = C\times K$  
-Q : query set, $Q = \{(x\_j,y\_j)|j = 1,...,n\}$  
+Q : query set, $Q = \lbrace(x\_j,y\_j)|j = 1,...,n\rbrace$  
 
 Snell et. al. 과 같은 최근의 인기있는 framework는 모든 input sample을 mean vector c에 mapping 시킬 수 있는 embedding function을 학습 시킬 수 있다.
 
