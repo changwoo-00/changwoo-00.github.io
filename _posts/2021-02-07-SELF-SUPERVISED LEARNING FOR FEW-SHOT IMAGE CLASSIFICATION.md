@@ -39,11 +39,11 @@ joint와 marginal의 곱 사이의 KullbackLeibler (KL) divergence로 정의된 
 
 [22]는 negative sampling에 대한 Noise Contrastive Estimation (NCE) loss를 최소화 함으로써 MI의 lower bound를 최대화 할 수 있음을 증명하였다.
 
-AMDIM의 핵심 concept는 두 view $(x_a, x_b)$ 사이의 global feature와 local feature사이의 MI를 최대화 하는 것이다.
+AMDIM의 핵심 concept는 두 view $(x\_a, x\_b)$ 사이의 global feature와 local feature사이의 MI를 최대화 하는 것이다.
 
-정확히 $<f_g(x_a), f_5(x_b)>$, $<f_g(x_a), f_7(x_b)>$ 그리고 $<f_5(x_a), f_5(x_b)>$의 MI를 최대화 시킨다.
+정확히 $<f\_g(x\_a), f\_5(x\_b)>$, $<f\_g(x\_a), f\_7(x\_b)>$ 그리고 $<f\_5(x\_a), f\_5(x\_b)>$의 MI를 최대화 시킨다.
 
-여기서 $f_g$는 global feature, $f_5$는 encoder의 $5\times5$ local feature map, $f_7$은 encoder의 $7\times7$  feature map이다.
+여기서 $f\_g$는 global feature, $f\_5$는 encoder의 $5\times5$ local feature map, $f\_7$은 encoder의 $7\times7$  feature map이다.
 
 예를 들어, $f_g(x_a)$와 $f_5(x_b)$사이의 NCE loss는 다음과 같다.
 	
@@ -52,9 +52,9 @@ AMDIM의 핵심 concept는 두 view $(x_a, x_b)$ 사이의 global feature와 loc
 \end{equation}
 
 
-$\mathcal{N}_x$는 $x$의 negative sample이며 $\phi$는 distance metric function이다.
+$\mathcal{N}\_x$는 $x$의 negative sample이며 $\phi$는 distance metric function이다.
 
-$x_a$와 $x_b$ 사이의 overall loss는 다음과 같다.
+$x\_a$와 $x\_b$ 사이의 overall loss는 다음과 같다.
 
 \begin{equation}
 	\mathcal{L}\_{{amdim}}\left(x\_{a}, x\_{b}\right)=\mathcal{L}\_{ {amdim }}\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)+ \mathcal{L}\_{{amdim }}\left(f\_{g}\left(x\_{a}\right), f\_{7}\left(x\_{b}\right)\right)+\mathcal{L}\_{{amdim }}\left(f\_{5}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)
@@ -64,14 +64,10 @@ $x_a$와 $x_b$ 사이의 overall loss는 다음과 같다.
 ### 3.2. Meta-learning stage
 
 K-way C-shot
-
 D : entire training dataset
-
 V : class labels
-
-S : support set, $S = \{(x_i, y_i)|i=1,...,m\}$, where $m = C\times K$
-
-Q : query set, $Q = \{(x_j,y_j)|j = 1,...,n\}$
+S : support set, $S = \{(x\_i, y\_i)|i=1,...,m\}$, where $m = C\times K$
+Q : query set, $Q = \{(x\_j,y\_j)|j = 1,...,n\}$
 
 Snell et. al. 과 같은 최근의 인기있는 framework는 모든 input sample을 mean vector c에 mapping 시킬 수 있는 embedding function을 학습 시킬 수 있다.
 
