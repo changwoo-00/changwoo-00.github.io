@@ -48,7 +48,7 @@ AMDIM의 핵심 concept는 두 view $(x\_a, x\_b)$ 사이의 global feature와 l
 예를 들어, $f\_g(x\_a)$와 $f\_5(x\_b)$사이의 NCE loss는 다음과 같다.
 	
 \begin{equation}
-	\mathcal{L}\_{{amdim }}(f\_{g}(x\_{a}\right), f\_{5}(x\_{b}\right)\right) = -\log \frac{\exp \left\{\phi\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)\right\}}{\sum_{\widetilde{x\_{b}} \in \mathcal{N}\_{x} \cup x\_{b}} \exp \left\{\phi\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(\widetilde{x\_{b}}\right)\right)\right\}}
+	\mathcal{L}\_{amdim}(f\_{g}(x\_{a}\right), f\_{5}(x\_{b}\right)\right) = -\log \frac{\exp \left\{\phi\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)\right\}}{\sum_{\widetilde{x\_{b}} \in \mathcal{N}\_{x} \cup x\_{b}} \exp \left\{\phi\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(\widetilde{x\_{b}}\right)\right)\right\}}
 \end{equation}
 
 \begin{equation}
@@ -60,7 +60,7 @@ $\mathcal{N}\_x$는 $x$의 negative sample이며 $\phi$는 distance metric funct
 $x\_a$와 $x\_b$ 사이의 overall loss는 다음과 같다.
 
 \begin{equation}
-	\mathcal{L}\_{{amdim}}\left(x\_{a}, x\_{b}\right)=\mathcal{L}\_{ amdim}\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)+\mathcal{L}\_{amdim }\left(f\_{g}\left(x\_{a}\right), f\_{7}\left(x\_{b}\right)\right)+\mathcal{L}\_{amdim }\left(f\_{5}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)
+	\mathcal{L}\_{amdim}\left(x\_{a}, x\_{b}\right)=\mathcal{L}\_{ amdim}\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)+\mathcal{L}\_{amdim }\left(f\_{g}\left(x\_{a}\right), f\_{7}\left(x\_{b}\right)\right)+\mathcal{L}\_{amdim }\left(f\_{5}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)
 \end{equation}
 
 
@@ -92,7 +92,7 @@ query sample q에 대해 모든 class에 대한 distribution을 다음과 같이
 식에서 확인 할 수 있듯이 distribution은 sample의 embedding과 class의 reconstructed features 사이의 distance에 대한 softmax로 표현된다. meta learning stage에서 loss는 다음과 같다.
 
 \begin{equation}
-	\mathcal{L}\_{{meta}}=d\left(f\_{g}(q), c\_{k}\right)+\log \sum\_{k^{\prime}} d\left(f\_{g}(q), c\_{k^{\prime}}\right)
+	\mathcal{L}\_{meta}=d\left(f\_{g}(q), c\_{k}\right)+\log \sum\_{k^{\prime}} d\left(f\_{g}(q), c\_{k^{\prime}}\right)
 \end{equation}
 
 ## Experimental results
