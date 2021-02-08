@@ -51,13 +51,16 @@ AMDIM의 핵심 concept는 두 view $(x\_a, x\_b)$ 사이의 global feature와 l
 	\mathcal{L}\_{{amdim }}(f\_{g}(x\_{a}\right), f\_{5}(x\_{b}\right)\right) = -\log \frac{\exp \left\{\phi\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)\right\}}{\sum_{\widetilde{x\_{b}} \in \mathcal{N}\_{x} \cup x\_{b}} \exp \left\{\phi\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(\widetilde{x\_{b}}\right)\right)\right\}}
 \end{equation}
 
+\begin{equation}
+\mathcal{L}_\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right) = -\log \frac{\exp \left{\phi\left(f_{g}\left(x_{a}\right), f_{5}\left(x_{b}\right)\right)\right}}{\sum_{\widetilde{x_{b}} \in \mathcal{N}_{x} \cup x_{b}} \exp \left{\phi\left(f_{g}\left(x_{a}\right), f_{5}\left(\widetilde{x_{b}}\right)\right)\right}}
+\end{equation}
 
 $\mathcal{N}\_x$는 $x$의 negative sample이며 $\phi$는 distance metric function이다.
 
 $x\_a$와 $x\_b$ 사이의 overall loss는 다음과 같다.
 
 \begin{equation}
-	\mathcal{L}\_{{amdim}}\left(x\_{a}, x\_{b}\right)=\mathcal{L}\_{ {amdim }}\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)+ \mathcal{L}\_{{amdim }}\left(f\_{g}\left(x\_{a}\right), f\_{7}\left(x\_{b}\right)\right)+\mathcal{L}\_{{amdim }}\left(f\_{5}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)
+	\mathcal{L}\_{{amdim}}\left(x\_{a}, x\_{b}\right)=\mathcal{L}\_{ amdim}\left(f\_{g}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)+\mathcal{L}\_{amdim }\left(f\_{g}\left(x\_{a}\right), f\_{7}\left(x\_{b}\right)\right)+\mathcal{L}\_{amdim }\left(f\_{5}\left(x\_{a}\right), f\_{5}\left(x\_{b}\right)\right)
 \end{equation}
 
 
