@@ -31,13 +31,12 @@ few-shot learning classification 문제의 한가지 인기있는 해결책은 p
 pretext task는 context로부터 뽑힌 여러 feature들 간의 mutual information을 최대화 하도록 설계되었다.
 
 joint와 marginal의 곱 사이의 KullbackLeibler (KL) divergence로 정의된 mutual information(MI)은 random variable X와 Y 사이의 shared information을 측정한다.
+
 \begin{equation}
 	I(X, Y) =D\_{K L}(p(x, y) \| p(x) p(y)) =\sum \sum p(x, y) \log \frac{p(x \mid y)}{p(x)}
 \end{equation}
 
 $$I(X, Y) =D\_{K L}(p(x, y) \| p(x) p(y)) =\sum \sum p(x, y) \log \frac{p(x \mid y)}{p(x)}$$
-
-$$$I(X, Y) =D\_{K L}(p(x, y) \| p(x) p(y)) =\sum \sum p(x, y) \log \frac{p(x \mid y)}{p(x)}$$$
 
 \begin{equation} I(X, Y) =D\_{K L}(p(x, y) \| p(x) p(y)) =\sum \sum p(x, y) \log \frac{p(x \mid y)}{p(x)} \end{equation}
 
