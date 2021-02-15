@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: http://hcw-00.github.io/sitemap.xml
